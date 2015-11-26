@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8BAE3B36-C183-40DE-BC9C-D9C5E9C7C487}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\libs\ltguimgr;..\libs\GameSpy;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CLIENTBUILD;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\libs\ltguimgr;..\libs\GameSpy;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CLIENTBUILD;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4530;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\libs\ltguimgr;..\libs\GameSpy;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CLIENTBUILD;_WINDOWS;_FINAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4530;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AnimationContext.cpp" />
+    <ClCompile Include="AnimationPropStrings.cpp" />
+    <ClCompile Include="AnimationTreePacked.cpp" />
+    <ClCompile Include="AnimationTreePackedLoader.cpp" />
+    <ClCompile Include="AnimationTreePackedMgr.cpp" />
+    <ClCompile Include="Animator.cpp" />
+    <ClCompile Include="AssertMgr.cpp" />
+    <ClCompile Include="AttachmentDB.cpp" />
+    <ClCompile Include="BroadcastDB.cpp" />
+    <ClCompile Include="CategoryDB.cpp" />
+    <ClCompile Include="CharacterAlignment.cpp" />
+    <ClCompile Include="CharacterDB.cpp" />
+    <ClCompile Include="CharacterPhysics.cpp" />
+    <ClCompile Include="ClientFXDB.cpp" />
+    <ClCompile Include="ClientServerShared.cpp" />
+    <ClCompile Include="ColorUtilities.cpp" />
+    <ClCompile Include="CommonUtilities.cpp" />
+    <ClCompile Include="DamageTypes.cpp" />
+    <ClCompile Include="DatabaseUtils.cpp" />
+    <ClCompile Include="DebugLine.cpp" />
+    <ClCompile Include="DebugNew.cpp" />
+    <ClCompile Include="EngineTimer.cpp" />
+    <ClCompile Include="FXDB.cpp" />
+    <ClCompile Include="GameAlloc.cpp" />
+    <ClCompile Include="GameDatabaseMgr.cpp" />
+    <ClCompile Include="GameModeMgr.cpp" />
+    <ClCompile Include="GlobalMgr.cpp" />
+    <ClCompile Include="..\..\Engine\sdk\inc\iltbaseclass.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="LeanNodeController.cpp" />
+    <ClCompile Include="..\..\Engine\sdk\inc\LTEulerAngles.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltmemhook.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltmodule.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltobjref.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MissionDB.cpp" />
+    <ClCompile Include="ModelsDB.cpp" />
+    <ClCompile Include="NavMarkerTypeDB.cpp" />
+    <ClCompile Include="NetDefs.cpp" />
+    <ClCompile Include="NodeTracker.cpp" />
+    <ClCompile Include="NodeTrackerContext.cpp" />
+    <ClCompile Include="ParsedMsg.cpp" />
+    <ClCompile Include="PhysicsCollisionMgr.cpp" />
+    <ClCompile Include="PhysicsUtilities.cpp" />
+    <ClCompile Include="PlayerRigidBody.cpp" />
+    <ClCompile Include="ProfileUtils.cpp" />
+    <ClCompile Include="PropsDB.cpp" />
+    <ClCompile Include="SaveLoadMgr.cpp" />
+    <ClCompile Include="ScmdConsole.cpp" />
+    <ClCompile Include="SFXMsgIds.cpp" />
+    <ClCompile Include="SharedFXStructs.cpp" />
+    <ClCompile Include="SharedMission.cpp" />
+    <ClCompile Include="SharedMovement.cpp" />
+    <ClCompile Include="SharedScoring.cpp" />
+    <ClCompile Include="ShatterTypeDB.cpp" />
+    <ClCompile Include="SkillDefs.cpp" />
+    <ClCompile Include="SonicData.cpp" />
+    <ClCompile Include="SonicsDB.cpp" />
+    <ClCompile Include="SoundDB.cpp" />
+    <ClCompile Include="SoundFilterDB.cpp" />
+    <ClCompile Include="SoundMgr.cpp" />
+    <ClCompile Include="SoundMixerDB.cpp" />
+    <ClCompile Include="SoundOcclusionDB.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StringEditMgr.cpp" />
+    <ClCompile Include="SurfaceDB.cpp" />
+    <ClCompile Include="SurfaceFunctions.cpp" />
+    <ClCompile Include="TeamMgr.cpp" />
+    <ClCompile Include="TemplateList.cpp" />
+    <ClCompile Include="TriggerTypeDB.cpp" />
+    <ClCompile Include="VersionMgr.cpp" />
+    <ClCompile Include="WaveFn.cpp" />
+    <ClCompile Include="WeaponDB.cpp" />
+    <ClCompile Include="WeaponPath.cpp" />
+    <ClCompile Include="WinUtil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActivateDB.h" />
+    <ClInclude Include="AnimationContext.h" />
+    <ClInclude Include="AnimationTreePacked.h" />
+    <ClInclude Include="AnimationTreePackedLoader.h" />
+    <ClInclude Include="AnimationTreePackedMgr.h" />
+    <ClInclude Include="AnimationTreePackedTypes.h" />
+    <ClInclude Include="AttachmentDB.h" />
+    <ClInclude Include="BodyStateEnums.h" />
+    <ClInclude Include="BroadcastDB.h" />
+    <ClInclude Include="BuildDefines.h" />
+    <ClInclude Include="CategoryDB.h" />
+    <ClInclude Include="CharacterDB.h" />
+    <ClInclude Include="CharacterPhysics.h" />
+    <ClInclude Include="ClientFXDB.h" />
+    <ClInclude Include="ClientServerShared.h" />
+    <ClInclude Include="ClientServerSharedEnums.h" />
+    <ClInclude Include="CLTFileToILTInStream.h" />
+    <ClInclude Include="CollisionsDB.h" />
+    <ClInclude Include="ColorUtilities.h" />
+    <ClInclude Include="CommonUtilities.h" />
+    <ClInclude Include="ControlPointDB.h" />
+    <ClInclude Include="DebrisMgr.h" />
+    <ClInclude Include="DialogueDB.h" />
+    <ClInclude Include="EngineTimer.h" />
+    <ClInclude Include="EventCaster.h" />
+    <ClInclude Include="FXDB.h" />
+    <ClInclude Include="GameDatabaseMgr.h" />
+    <ClInclude Include="GameModeMgr.h" />
+    <ClInclude Include="GameModesDB.h" />
+    <ClInclude Include="GlobalMgr.h" />
+    <ClInclude Include="LeanNodeController.h" />
+    <ClInclude Include="ModelsDB.h" />
+    <ClInclude Include="NavMarkerTypeDB.h" />
+    <ClInclude Include="ObjectiveDB.h" />
+    <ClInclude Include="PhysicsCollisionMgr.h" />
+    <ClInclude Include="PhysicsUtilities.h" />
+    <ClInclude Include="PlayerRigidBody.h" />
+    <ClInclude Include="PropsDB.h" />
+    <ClInclude Include="SharedScoring.h" />
+    <ClInclude Include="SharedVoting.h" />
+    <ClInclude Include="ShatterTypeDB.h" />
+    <ClInclude Include="SkillDefs.h" />
+    <ClInclude Include="SlowMoDB.h" />
+    <ClInclude Include="SonicData.h" />
+    <ClInclude Include="SonicsDB.h" />
+    <ClInclude Include="SoundDB.h" />
+    <ClInclude Include="SoundFilterDB.h" />
+    <ClInclude Include="SoundMixerDB.h" />
+    <ClInclude Include="SoundOcclusionDB.h" />
+    <ClInclude Include="StringEditMgr.h" />
+    <ClInclude Include="SurfaceDB.h" />
+    <ClInclude Include="TeamMgr.h" />
+    <ClInclude Include="TextureReference.h" />
+    <ClInclude Include="TriggerTypeDB.h" />
+    <ClInclude Include="VersionMgr.h" />
+    <ClInclude Include="WeaponDB.h" />
+    <ClInclude Include="WeaponPath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\platform\Shared_Platform.vcxproj">
+      <Project>{c90050d3-4d5a-496e-a29c-e197efd490bd}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

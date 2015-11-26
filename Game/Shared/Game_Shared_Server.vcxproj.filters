@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{0ef5a691-6049-4a08-b72d-a9acee2a8e4f}</UniqueIdentifier>
+      <Extensions>cpp</Extensions>
+    </Filter>
+    <Filter Include="Source\Win32">
+      <UniqueIdentifier>{71a091bf-001e-4a66-a4af-2c8c42b16d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{1deca1e0-b61b-49a3-bba5-0c24e17d1091}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnimationContext.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationPropStrings.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationTreePacked.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationTreePackedLoader.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationTreePackedMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BroadcastDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoryDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterAlignment.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterPhysics.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientServerShared.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorUtilities.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonUtilities.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DamageTypes.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseUtils.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugLine.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugNew.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineTimer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FXDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameAlloc.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDatabaseMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameModeMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\iltbaseclass.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LeanNodeController.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\LTEulerAngles.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltmemhook.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltmodule.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltobjref.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MissionDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelsDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NavMarkerTypeDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NetDefs.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeTracker.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeTrackerContext.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ParsedMsg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsCollisionMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsUtilities.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRigidBody.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ProfileUtils.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PropsDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveLoadMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ScmdConsole.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SFXMsgIds.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedFXStructs.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedMission.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedMovement.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedScoring.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ShatterTypeDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillDefs.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SonicData.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SonicsDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundMixerDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StringEditMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SurfaceFunctions.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateList.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VersionMgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WaveFn.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponDB.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponPath.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WinUtil.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AssertMgr.cpp">
+      <Filter>Source\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientFXDB.cpp">
+      <Filter>Source\Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StringEditMgr.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivateDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationContext.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationTreePacked.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationTreePackedLoader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationTreePackedMgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationTreePackedTypes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyStateEnums.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BroadcastDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildDefines.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoryDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterPhysics.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientFXDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientServerShared.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientServerSharedEnums.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CLTFileToILTInStream.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionsDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorUtilities.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonUtilities.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlPointDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogueDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineTimer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="EventCaster.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FXDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDatabaseMgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameModeMgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameModesDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalMgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LeanNodeController.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelsDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavMarkerTypeDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectiveDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsCollisionMgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsUtilities.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRigidBody.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PropsDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedScoring.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ShatterTypeDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillDefs.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SlowMoDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SonicData.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SonicsDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundMixerDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SurfaceMgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamMgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VersionMgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponDB.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponPath.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

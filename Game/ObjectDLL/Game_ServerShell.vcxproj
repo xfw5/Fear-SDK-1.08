@@ -1,0 +1,1469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <RootNamespace>GameServer</RootNamespace>
+    <ProjectGuid>{BA5A96FB-3B60-402D-8D84-5B8D136E500A}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <CustomBuildStep>
+      <Command>echo xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+</Command>
+      <Outputs>$(OutDir)..\..\..\Dev\Runtime\Game\$(TargetFileName);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>$(OutDir)$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\Shared;.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;USE_INTEL_COMPILER;WIN32;_WINDOWS;_SERVERBUILD;MEMTRACK_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4530;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\..\Engine\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Game_Shared_Server.lib;Shared_CRC.lib;winmm.lib;Shared_Assert.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameServer.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir);..\..\Engine\sdk\lib\win;..\..\Engine\sdk\lib\win\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildStep>
+      <Command>echo xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+</Command>
+      <Inputs>$(TargetPath);%(Inputs)</Inputs>
+      <Outputs>$(OutDir)..\..\..\Dev\Runtime\Game\$(TargetFileName);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>$(OutDir)$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Shared;.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_SERVERBUILD;MEMTRACK_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\..\Engine\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Game_Shared_Server.lib;Shared_CRC.lib;winmm.lib;Shared_Assert.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameServer.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir);..\..\Engine\sdk\lib\win;..\..\Engine\sdk\lib\win\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <CustomBuildStep>
+      <Command>echo xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+</Command>
+      <Outputs>$(OutDir)..\..\..\Dev\Runtime\Game\$(TargetFileName);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>$(OutDir)$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\Shared;.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_SERVERBUILD;_FINAL;MEMTRACK_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4530;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\..\Engine\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Game_Shared_Server.lib;Shared_CRC.lib;winmm.lib;Shared_Assert.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameServer.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir);..\..\Engine\sdk\lib\win;..\..\Engine\sdk\lib\win\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Shared\ActivateTypeHandler.cpp" />
+    <ClCompile Include="ActiveWorldModel.cpp" />
+    <ClCompile Include="AI.cpp" />
+    <ClCompile Include="AIActionAbstract.cpp" />
+    <ClCompile Include="AIActionAnimate.cpp" />
+    <ClCompile Include="AIActionAttack.cpp" />
+    <ClCompile Include="AIActionAttackBurstLimited.cpp" />
+    <ClCompile Include="AIActionAttackCrouch.cpp" />
+    <ClCompile Include="AIActionAttackFromAmbush.cpp" />
+    <ClCompile Include="AIActionAttackFromCover.cpp" />
+    <ClCompile Include="AIActionAttackFromNode.cpp" />
+    <ClCompile Include="AIActionAttackFromNodeBounded.cpp" />
+    <ClCompile Include="AIActionAttackFromSafetyNodeFirePosition.cpp" />
+    <ClCompile Include="AIActionAttackFromVehicle.cpp" />
+    <ClCompile Include="AIActionAttackFromVehicleMelee.cpp" />
+    <ClCompile Include="AIActionAttackFromView.cpp" />
+    <ClCompile Include="AIActionAttackGrenade.cpp" />
+    <ClCompile Include="AIActionAttackGrenadeFromCover.cpp" />
+    <ClCompile Include="AIActionAttackLunge3D.cpp" />
+    <ClCompile Include="AIActionAttackLungeMelee.cpp" />
+    <ClCompile Include="AIActionAttackLungeSuicide.cpp" />
+    <ClCompile Include="AIActionAttackLungeUncloaked.cpp" />
+    <ClCompile Include="AIActionAttackMelee.cpp" />
+    <ClCompile Include="AIActionAttackMeleeFromDistance.cpp" />
+    <ClCompile Include="AIActionAttackMeleeFromRun.cpp" />
+    <ClCompile Include="AIActionAttackMeleeKick.cpp" />
+    <ClCompile Include="AIActionAttackMeleeLong.cpp" />
+    <ClCompile Include="AIActionAttackMeleeUncloaked.cpp" />
+    <ClCompile Include="AIActionAttackReady.cpp" />
+    <ClCompile Include="AIActionAttackTurret.cpp" />
+    <ClCompile Include="AIActionAttackTurretCeiling.cpp" />
+    <ClCompile Include="AIActionBerserker.cpp" />
+    <ClCompile Include="AIActionBerserkerRecoil.cpp" />
+    <ClCompile Include="AIActionBerserkerRecoilDismount.cpp" />
+    <ClCompile Include="AIActionBlindFireFromCover.cpp" />
+    <ClCompile Include="AIActionChangePrimaryWeapon.cpp" />
+    <ClCompile Include="AIActionCounterMeleeBlock.cpp" />
+    <ClCompile Include="AIActionCounterMeleeDodge.cpp" />
+    <ClCompile Include="AIActionDeathAnimated.cpp" />
+    <ClCompile Include="AIActionDeathOnVehicle.cpp" />
+    <ClCompile Include="AIActionDeathOnVehicleUnanimated.cpp" />
+    <ClCompile Include="AIActionDefeatedRecoil.cpp" />
+    <ClCompile Include="AIActionDefeatedTaserRecoil.cpp" />
+    <ClCompile Include="AIActionDismountNode.cpp" />
+    <ClCompile Include="AIActionDismountNodeAggressive.cpp" />
+    <ClCompile Include="AIActionDismountNodeUncloaked.cpp" />
+    <ClCompile Include="AIActionDismountPlayer.cpp" />
+    <ClCompile Include="AIActionDismountVehicle.cpp" />
+    <ClCompile Include="AIActionDodgeBackpedal.cpp" />
+    <ClCompile Include="AIActionDodgeCovered.cpp" />
+    <ClCompile Include="AIActionDodgeOnVehicle.cpp" />
+    <ClCompile Include="AIActionDodgeRoll.cpp" />
+    <ClCompile Include="AIActionDodgeRollParanoid.cpp" />
+    <ClCompile Include="AIActionDodgeShuffle.cpp" />
+    <ClCompile Include="AIActionDrawWeapon.cpp" />
+    <ClCompile Include="AIActionDropWeapon.cpp" />
+    <ClCompile Include="AIActionEscapeDanger.cpp" />
+    <ClCompile Include="AIActionFaceNode.cpp" />
+    <ClCompile Include="AIActionFinishBlockAttack.cpp" />
+    <ClCompile Include="AIActionFinishBlockNormal.cpp" />
+    <ClCompile Include="AIActionFinishingMoveReaction.cpp" />
+    <ClCompile Include="AIActionFlushOutWithGrenade.cpp" />
+    <ClCompile Include="AIActionFollow.cpp" />
+    <ClCompile Include="AIActionFollowHeavyArmor.cpp" />
+    <ClCompile Include="AIActionFollowPlayer.cpp" />
+    <ClCompile Include="AIActionFollowWaitAtNode.cpp" />
+    <ClCompile Include="AIActionGetOutOfTheWay.cpp" />
+    <ClCompile Include="AIActionGotoAbstract.cpp" />
+    <ClCompile Include="AIActionGotoFlamePotPosition.cpp" />
+    <ClCompile Include="AIActionGotoNode.cpp" />
+    <ClCompile Include="AIActionGotoNode3D.cpp" />
+    <ClCompile Include="AIActionGotoNodeCovered.cpp" />
+    <ClCompile Include="AIActionGotoNodeDirect.cpp" />
+    <ClCompile Include="AIActionGotoNodeOfType.cpp" />
+    <ClCompile Include="AIActionGotoTarget.cpp" />
+    <ClCompile Include="AIActionGotoTarget3D.cpp" />
+    <ClCompile Include="AIActionGotoTargetLost.cpp" />
+    <ClCompile Include="AIActionGotoValidPosition.cpp" />
+    <ClCompile Include="AIActionHolsterWeapon.cpp" />
+    <ClCompile Include="AIActionIdle.cpp" />
+    <ClCompile Include="AIActionIdleCombat.cpp" />
+    <ClCompile Include="AIActionIdleFidget.cpp" />
+    <ClCompile Include="AIActionIdleOnVehicle.cpp" />
+    <ClCompile Include="AIActionIdleTurret.cpp" />
+    <ClCompile Include="AIActionInspectDisturbance.cpp" />
+    <ClCompile Include="AIActionInstantDeath.cpp" />
+    <ClCompile Include="AIActionInstantDeathKnockedDown.cpp" />
+    <ClCompile Include="AIActionLongRecoil.cpp" />
+    <ClCompile Include="AIActionLongRecoilHelmetPiercing.cpp" />
+    <ClCompile Include="AIActionLookAtDisturbance.cpp" />
+    <ClCompile Include="AIActionLookAtDisturbanceFromView.cpp" />
+    <ClCompile Include="AIActionLopeToTargetUncloaked.cpp" />
+    <ClCompile Include="AIActionMeleeBlocked.cpp" />
+    <ClCompile Include="AIActionMgr.cpp" />
+    <ClCompile Include="AIActionMountNode.cpp" />
+    <ClCompile Include="AIActionMountNodeUncloaked.cpp" />
+    <ClCompile Include="AIActionMountPlayer.cpp" />
+    <ClCompile Include="AIActionMountVehicle.cpp" />
+    <ClCompile Include="AIActionPickupWeaponInWorld.cpp" />
+    <ClCompile Include="AIActionReactToDanger.cpp" />
+    <ClCompile Include="AIActionReactToShove.cpp" />
+    <ClCompile Include="AIActionReactToWeaponBroke.cpp" />
+    <ClCompile Include="AIActionReload.cpp" />
+    <ClCompile Include="AIActionReloadCovered.cpp" />
+    <ClCompile Include="AIActionReloadCrouch.cpp" />
+    <ClCompile Include="AIActionReloadFromSafetyNode.cpp" />
+    <ClCompile Include="AIActionShortRecoil.cpp" />
+    <ClCompile Include="AIActionShortRecoilOnVehicle.cpp" />
+    <ClCompile Include="AIActionShovePathBlocker.cpp" />
+    <ClCompile Include="AIActionStunned.cpp" />
+    <ClCompile Include="AIActionSuppressionFire.cpp" />
+    <ClCompile Include="AIActionSuppressionFireFromCover.cpp" />
+    <ClCompile Include="AIActionSurpriseAttackLaunch.cpp" />
+    <ClCompile Include="AIActionSurprised.cpp" />
+    <ClCompile Include="AIActionSurveyArea.cpp" />
+    <ClCompile Include="AIActionTaseredLevel1.cpp" />
+    <ClCompile Include="AIActionTaseredLevel2.cpp" />
+    <ClCompile Include="AIActionTaseredRecovery.cpp" />
+    <ClCompile Include="AIActionTraverseBlockedDoor.cpp" />
+    <ClCompile Include="AIActionTraverseLink.cpp" />
+    <ClCompile Include="AIActionTraverseLinkUncloaked.cpp" />
+    <ClCompile Include="AIActionUncover.cpp" />
+    <ClCompile Include="AIActionUseSmartObjectNode.cpp" />
+    <ClCompile Include="AIActionUseSmartObjectNodeMounted.cpp" />
+    <ClCompile Include="AIActionWaitForBlockedPath.cpp" />
+    <ClCompile Include="AIActionWaitForFollowerToCatchUp.cpp" />
+    <ClCompile Include="AIActivityAbstract.cpp" />
+    <ClCompile Include="AIActivityAdvanceCover.cpp" />
+    <ClCompile Include="AIActivityExchangeWeapons.cpp" />
+    <ClCompile Include="AIActivityGetToCover.cpp" />
+    <ClCompile Include="AIActivityOrderlyAdvance.cpp" />
+    <ClCompile Include="AIActivitySearch.cpp" />
+    <ClCompile Include="AIAssert.cpp" />
+    <ClCompile Include="AIAStarMachine.cpp" />
+    <ClCompile Include="AIAStarNavMesh.cpp" />
+    <ClCompile Include="AIAStarNavMeshEscape.cpp" />
+    <ClCompile Include="AIAStarNavMeshSafe.cpp" />
+    <ClCompile Include="AIAStarPlanner.cpp" />
+    <ClCompile Include="AIAStarStorageLinkedList.cpp" />
+    <ClCompile Include="AIBlackBoard.cpp" />
+    <ClCompile Include="AIBrain.cpp" />
+    <ClCompile Include="AICharacterTypeRestrictions.cpp" />
+    <ClCompile Include="AIClassFactory.cpp" />
+    <ClCompile Include="AICombatOpportunity.cpp" />
+    <ClCompile Include="AICombatOpportunityRadius.cpp" />
+    <ClCompile Include="AICommandMgr.cpp" />
+    <ClCompile Include="AIConfig.cpp" />
+    <ClCompile Include="AICoordinator.cpp" />
+    <ClCompile Include="AIDB.cpp" />
+    <ClCompile Include="AIEnumContexts.cpp" />
+    <ClCompile Include="AIGoalAbstract.cpp" />
+    <ClCompile Include="AIGoalAlert.cpp" />
+    <ClCompile Include="AIGoalAmbush.cpp" />
+    <ClCompile Include="AIGoalAnimate.cpp" />
+    <ClCompile Include="AIGoalAnimateInterrupt.cpp" />
+    <ClCompile Include="AIGoalBerserker.cpp" />
+    <ClCompile Include="AIGoalBlitzAndUseNode.cpp" />
+    <ClCompile Include="AIGoalBlitzCharacter.cpp" />
+    <ClCompile Include="AIGoalBlitzNode.cpp" />
+    <ClCompile Include="AIGoalChangePrimaryWeapon.cpp" />
+    <ClCompile Include="AIGoalCharge.cpp" />
+    <ClCompile Include="AIGoalChase.cpp" />
+    <ClCompile Include="AIGoalChaseBerserker.cpp" />
+    <ClCompile Include="AIGoalCircleFlamePot.cpp" />
+    <ClCompile Include="AIGoalCombatOpportunityAttack.cpp" />
+    <ClCompile Include="AIGoalCorrectPosition.cpp" />
+    <ClCompile Include="AIGoalCounterMelee.cpp" />
+    <ClCompile Include="AIGoalCover.cpp" />
+    <ClCompile Include="AIGoalCritterFlee.cpp" />
+    <ClCompile Include="AIGoalDeath.cpp" />
+    <ClCompile Include="AIGoalDefeated.cpp" />
+    <ClCompile Include="AIGoalDismountVehicle.cpp" />
+    <ClCompile Include="AIGoalDodge.cpp" />
+    <ClCompile Include="AIGoalEscapeDanger.cpp" />
+    <ClCompile Include="AIGoalExitLink.cpp" />
+    <ClCompile Include="AIGoalFallBack.cpp" />
+    <ClCompile Include="AIGoalFinishBlockFailure.cpp" />
+    <ClCompile Include="AIGoalFinishBlockSuccess.cpp" />
+    <ClCompile Include="AIGoalFlee.cpp" />
+    <ClCompile Include="AIGoalFlushOut.cpp" />
+    <ClCompile Include="AIGoalFlyAway.cpp" />
+    <ClCompile Include="AIGoalFollow.cpp" />
+    <ClCompile Include="AIGoalFollowHide.cpp" />
+    <ClCompile Include="AIGoalFollowWait.cpp" />
+    <ClCompile Include="AIGoalGoto.cpp" />
+    <ClCompile Include="AIGoalGuard.cpp" />
+    <ClCompile Include="AIGoalIdle.cpp" />
+    <ClCompile Include="AIGoalIntro.cpp" />
+    <ClCompile Include="AIGoalInvestigate.cpp" />
+    <ClCompile Include="AIGoalKillEnemy.cpp" />
+    <ClCompile Include="AIGoalLead.cpp" />
+    <ClCompile Include="AIGoalMenace.cpp" />
+    <ClCompile Include="AIGoalMgr.cpp" />
+    <ClCompile Include="AIGoalMountVehicle.cpp" />
+    <ClCompile Include="AIGoalPatrol.cpp" />
+    <ClCompile Include="AIGoalPickupWeapon.cpp" />
+    <ClCompile Include="AIGoalReactToBerserkerKick.cpp" />
+    <ClCompile Include="AIGoalReactToBlockedPath.cpp" />
+    <ClCompile Include="AIGoalReactToDamage.cpp" />
+    <ClCompile Include="AIGoalReactToFinishingMove.cpp" />
+    <ClCompile Include="AIGoalReactToFollowerFallingBehind.cpp" />
+    <ClCompile Include="AIGoalReactToMeleeBlocked.cpp" />
+    <ClCompile Include="AIGoalReactToShove.cpp" />
+    <ClCompile Include="AIGoalReactToWeaponBroke.cpp" />
+    <ClCompile Include="AIGoalRetreat.cpp" />
+    <ClCompile Include="AIGoalRetreatLimited.cpp" />
+    <ClCompile Include="AIGoalScan.cpp" />
+    <ClCompile Include="AIGoalSearch.cpp" />
+    <ClCompile Include="AIGoalSearchFollow.cpp" />
+    <ClCompile Include="AIGoalSearchLostTarget.cpp" />
+    <ClCompile Include="AIGoalSelfDefense.cpp" />
+    <ClCompile Include="AIGoalStalk.cpp" />
+    <ClCompile Include="AIGoalStunned.cpp" />
+    <ClCompile Include="AIGoalSuppressEnemy.cpp" />
+    <ClCompile Include="AIGoalSurpriseAttackLaunch.cpp" />
+    <ClCompile Include="AIGoalTraverseLink.cpp" />
+    <ClCompile Include="AIGoalUseArmoredAutonomous.cpp" />
+    <ClCompile Include="AIGoalUseSmartObject.cpp" />
+    <ClCompile Include="AIGoalUseSmartObjectCombat.cpp" />
+    <ClCompile Include="AIGoalWork.cpp" />
+    <ClCompile Include="AIGoalWorkTargetless.cpp" />
+    <ClCompile Include="AIMgr.cpp" />
+    <ClCompile Include="AIMovement.cpp" />
+    <ClCompile Include="AIMovementUtils.cpp" />
+    <ClCompile Include="AINavigationMgr.cpp" />
+    <ClCompile Include="AINavMesh.cpp" />
+    <ClCompile Include="AINavMeshGen.cpp" />
+    <ClCompile Include="AINavMeshGenCarver.cpp" />
+    <ClCompile Include="AINavMeshGenImportExportGame.cpp" />
+    <ClCompile Include="AINavMeshGenPoly.cpp" />
+    <ClCompile Include="AINavMeshGenQuadTree.cpp" />
+    <ClCompile Include="AINavMeshGenTypes.cpp" />
+    <ClCompile Include="AINavMeshLink.cpp" />
+    <ClCompile Include="AINavMeshLinkAbstract.cpp" />
+    <ClCompile Include="AINavMeshLinkAbstractOneAnim.cpp" />
+    <ClCompile Include="AINavMeshLinkClimb.cpp" />
+    <ClCompile Include="AINavMeshLinkCrawl.cpp" />
+    <ClCompile Include="AINavMeshLinkDiveThru.cpp" />
+    <ClCompile Include="AINavMeshLinkDoor.cpp" />
+    <ClCompile Include="AINavMeshLinkDuckRun.cpp" />
+    <ClCompile Include="AINavMeshLinkDuckUnder.cpp" />
+    <ClCompile Include="AINavMeshLinkExit.cpp" />
+    <ClCompile Include="AINavMeshLinkFlamePot.cpp" />
+    <ClCompile Include="AINavMeshLinkFlyThru.cpp" />
+    <ClCompile Include="AINavMeshLinkJump.cpp" />
+    <ClCompile Include="AINavMeshLinkJumpOver.cpp" />
+    <ClCompile Include="AINavMeshLinkLoseTarget.cpp" />
+    <ClCompile Include="AINavMeshLinkPlayer.cpp" />
+    <ClCompile Include="AINavMeshLinkStairs.cpp" />
+    <ClCompile Include="AINode.cpp" />
+    <ClCompile Include="AINodeArmored.cpp" />
+    <ClCompile Include="AINodeCluster.cpp" />
+    <ClCompile Include="AINodeCombatOpportunity.cpp" />
+    <ClCompile Include="AINodeCombatOpportunityView.cpp" />
+    <ClCompile Include="AINodeDarkChant.cpp" />
+    <ClCompile Include="AINodeDarkWait.cpp" />
+    <ClCompile Include="AINodeFallBack.cpp" />
+    <ClCompile Include="AINodeFollow.cpp" />
+    <ClCompile Include="AINodeGuard.cpp" />
+    <ClCompile Include="AINodeHide.cpp" />
+    <ClCompile Include="AINodeInterest.cpp" />
+    <ClCompile Include="AINodeIntro.cpp" />
+    <ClCompile Include="AINodeLead.cpp" />
+    <ClCompile Include="AINodeMgr.cpp" />
+    <ClCompile Include="AINodePickupWeapon.cpp" />
+    <ClCompile Include="AINodeSafety.cpp" />
+    <ClCompile Include="AINodeSafetyFirePosition.cpp" />
+    <ClCompile Include="AINodeScanner.cpp" />
+    <ClCompile Include="AINodeStalk.cpp" />
+    <ClCompile Include="AINodeStimulus.cpp" />
+    <ClCompile Include="AINodeSurprise.cpp" />
+    <ClCompile Include="AINodeTrackerContext.cpp" />
+    <ClCompile Include="AINodeTypes.cpp" />
+    <ClCompile Include="AINodeValidators.cpp" />
+    <ClCompile Include="AIPathKnowledgeMgr.cpp" />
+    <ClCompile Include="AIPathMgrNavMesh.cpp" />
+    <ClCompile Include="AIPlanner.cpp" />
+    <ClCompile Include="AIQuadTree.cpp" />
+    <ClCompile Include="AIRegion.cpp" />
+    <ClCompile Include="AISensorAbstract.cpp" />
+    <ClCompile Include="AISensorAbstractStimulatable.cpp" />
+    <ClCompile Include="AISensorAwarenessMod.cpp" />
+    <ClCompile Include="AISensorBerserker.cpp" />
+    <ClCompile Include="AISensorCloak.cpp" />
+    <ClCompile Include="AISensorCombatOpportunity.cpp" />
+    <ClCompile Include="AISensorCoolMove.cpp" />
+    <ClCompile Include="AISensorCounterMelee.cpp" />
+    <ClCompile Include="AISensorCritter.cpp" />
+    <ClCompile Include="AISensorDamage.cpp" />
+    <ClCompile Include="AISensorDamageFX.cpp" />
+    <ClCompile Include="AISensorDamageTurret.cpp" />
+    <ClCompile Include="AISensorEnemyDamaged.cpp" />
+    <ClCompile Include="AISensorEnemyDamagedSuicide.cpp" />
+    <ClCompile Include="AISensorFlamePot.cpp" />
+    <ClCompile Include="AISensorFlashlight.cpp" />
+    <ClCompile Include="AISensorFlyThru.cpp" />
+    <ClCompile Include="AISensorGuard.cpp" />
+    <ClCompile Include="AISensorHearDisturbance.cpp" />
+    <ClCompile Include="AISensorInstantDeath.cpp" />
+    <ClCompile Include="AISensorLocation.cpp" />
+    <ClCompile Include="AISensorLostTarget.cpp" />
+    <ClCompile Include="AISensorLunge.cpp" />
+    <ClCompile Include="AISensorMgr.cpp" />
+    <ClCompile Include="AISensorNode.cpp" />
+    <ClCompile Include="AISensorNodeCombat.cpp" />
+    <ClCompile Include="AISensorNodeFollow.cpp" />
+    <ClCompile Include="AISensorNodeGuarded.cpp" />
+    <ClCompile Include="AISensorNodeInterest.cpp" />
+    <ClCompile Include="AISensorNodeSafetyFirePosition.cpp" />
+    <ClCompile Include="AISensorNodeSearch.cpp" />
+    <ClCompile Include="AISensorNodeStalk.cpp" />
+    <ClCompile Include="AISensorPassTarget.cpp" />
+    <ClCompile Include="AISensorPatrol.cpp" />
+    <ClCompile Include="AISensorPersonalBubble.cpp" />
+    <ClCompile Include="AISensorPlayerTooClose.cpp" />
+    <ClCompile Include="AISensorPulse.cpp" />
+    <ClCompile Include="AISensorScanner.cpp" />
+    <ClCompile Include="AISensorSeeDanger.cpp" />
+    <ClCompile Include="AISensorSeeDisturbance.cpp" />
+    <ClCompile Include="AISensorSeeEnemy.cpp" />
+    <ClCompile Include="AISensorSeeEnemyNoFOV.cpp" />
+    <ClCompile Include="AISensorSeeEnemyNoShootThru.cpp" />
+    <ClCompile Include="AISensorSeeFlashlightBeam.cpp" />
+    <ClCompile Include="AISensorSeekEnemy.cpp" />
+    <ClCompile Include="AISensorShoved.cpp" />
+    <ClCompile Include="AISensorSlowMo.cpp" />
+    <ClCompile Include="AISensorSquadCommunicationThreat.cpp" />
+    <ClCompile Include="AISensorStatusCheck.cpp" />
+    <ClCompile Include="AISensorTargetIsAimingAtMe.cpp" />
+    <ClCompile Include="AISensorTargetIsAimingAtMeMelee.cpp" />
+    <ClCompile Include="AISensorTargetIsAimingAtMeParanoid.cpp" />
+    <ClCompile Include="AISensorTargetIsAwareOfMyPosition.cpp" />
+    <ClCompile Include="AISensorTouch.cpp" />
+    <ClCompile Include="AISensorTraitor.cpp" />
+    <ClCompile Include="AISensorValidPosition.cpp" />
+    <ClCompile Include="AISensorView.cpp" />
+    <ClCompile Include="AISensorWeaponItem.cpp" />
+    <ClCompile Include="AISoundDB.cpp" />
+    <ClCompile Include="AISoundMgr.cpp" />
+    <ClCompile Include="AISounds.cpp" />
+    <ClCompile Include="AISpawner.cpp" />
+    <ClCompile Include="AISquad.cpp" />
+    <ClCompile Include="AIState.cpp" />
+    <ClCompile Include="AIStateAnimate.cpp" />
+    <ClCompile Include="AIStateGoto.cpp" />
+    <ClCompile Include="AIStateUseSmartObject.cpp" />
+    <ClCompile Include="AIStimulusMgr.cpp" />
+    <ClCompile Include="AIStreamSim.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AITarget.cpp" />
+    <ClCompile Include="AITargetSelectAbstract.cpp" />
+    <ClCompile Include="AITargetSelectAllyDisturbance.cpp" />
+    <ClCompile Include="AITargetSelectBerserker.cpp" />
+    <ClCompile Include="AITargetSelectCharacter.cpp" />
+    <ClCompile Include="AITargetSelectCharacterOnlyOne.cpp" />
+    <ClCompile Include="AITargetSelectCharacterSquad.cpp" />
+    <ClCompile Include="AITargetSelectCharacterUrgent.cpp" />
+    <ClCompile Include="AITargetSelectCharacterUrgentSpatial.cpp" />
+    <ClCompile Include="AITargetSelectCombatOpportunity.cpp" />
+    <ClCompile Include="AITargetSelectDamager.cpp" />
+    <ClCompile Include="AITargetSelectDisturbance.cpp" />
+    <ClCompile Include="AITargetSelectDisturbanceBeyondGuard.cpp" />
+    <ClCompile Include="AITargetSelectDisturbanceSource.cpp" />
+    <ClCompile Include="AITargetSelectDisturbanceSquad.cpp" />
+    <ClCompile Include="AITargetSelectDisturbanceUrgent.cpp" />
+    <ClCompile Include="AITargetSelectFollower.cpp" />
+    <ClCompile Include="AITargetSelectInterest.cpp" />
+    <ClCompile Include="AITargetSelectLeader.cpp" />
+    <ClCompile Include="AITargetSelectMgr.cpp" />
+    <ClCompile Include="AITargetSelectPlayerTurret.cpp" />
+    <ClCompile Include="AITargetSelectScripted.cpp" />
+    <ClCompile Include="AITargetSelectTraitor.cpp" />
+    <ClCompile Include="AITargetSelectWeaponItem.cpp" />
+    <ClCompile Include="AIUtils.cpp" />
+    <ClCompile Include="AIWeaponAbstract.cpp" />
+    <ClCompile Include="AIWeaponMelee.cpp" />
+    <ClCompile Include="AIWeaponMgr.cpp" />
+    <ClCompile Include="AIWeaponRanged.cpp" />
+    <ClCompile Include="AIWeaponThrown.cpp" />
+    <ClCompile Include="AIWeaponUtils.cpp" />
+    <ClCompile Include="AIWorkingMemory.cpp" />
+    <ClCompile Include="AIWorkingMemoryCentral.cpp" />
+    <ClCompile Include="AIWorldState.cpp" />
+    <ClCompile Include="Alarm.cpp" />
+    <ClCompile Include="AmmoBox.cpp" />
+    <ClCompile Include="AnimatorPlayer.cpp" />
+    <ClCompile Include="Arsenal.cpp" />
+    <ClCompile Include="..\Shared\AttachmentDB.cpp" />
+    <ClCompile Include="Attachments.cpp" />
+    <ClCompile Include="AutoAimMagnet.cpp" />
+    <ClCompile Include="BanIPMgr.cpp" />
+    <ClCompile Include="BanUserMgr.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="..\Shared\CharacterAlignment.cpp" />
+    <ClCompile Include="CharacterHitBox.cpp" />
+    <ClCompile Include="CharacterMgr.cpp" />
+    <ClCompile Include="ClientWeaponSFX.cpp" />
+    <ClCompile Include="CommandDB.cpp" />
+    <ClCompile Include="CommandMgr.cpp" />
+    <ClCompile Include="CommandObject.cpp" />
+    <ClCompile Include="ConstraintBase.cpp" />
+    <ClCompile Include="ConstraintHinge.cpp" />
+    <ClCompile Include="ConstraintLimitedHinge.cpp" />
+    <ClCompile Include="ConstraintPoint.cpp" />
+    <ClCompile Include="ConstraintPrismatic.cpp" />
+    <ClCompile Include="ConstraintRagdoll.cpp" />
+    <ClCompile Include="ConstraintStiffSpring.cpp" />
+    <ClCompile Include="ConstraintWheel.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="ControlPoint.cpp" />
+    <ClCompile Include="CTFFlag.cpp" />
+    <ClCompile Include="CTFFlagBase.cpp" />
+    <ClCompile Include="DamageTracker.cpp" />
+    <ClCompile Include="..\Shared\DebugLine.cpp" />
+    <ClCompile Include="DebugLineSystem.cpp" />
+    <ClCompile Include="DecisionObject.cpp" />
+    <ClCompile Include="DEditHook.cpp" />
+    <ClCompile Include="Destructible.cpp" />
+    <ClCompile Include="DestructibleModel.cpp" />
+    <ClCompile Include="DestructibleWorldModel.cpp" />
+    <ClCompile Include="Dialogue.cpp" />
+    <ClCompile Include="DisplayMeter.cpp" />
+    <ClCompile Include="DisplayTimer.cpp" />
+    <ClCompile Include="Door.cpp" />
+    <ClCompile Include="DynamicSectorVolume.cpp" />
+    <ClCompile Include="EntryToolLock.cpp" />
+    <ClCompile Include="EventCounter.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Flicker.cpp" />
+    <ClCompile Include="..\Shared\ForceVolume.cpp" />
+    <ClCompile Include="ForensicObject.cpp" />
+    <ClCompile Include="..\Shared\GameAlloc.cpp" />
+    <ClCompile Include="GameBase.cpp" />
+    <ClCompile Include="GameServerShell.cpp" />
+    <ClCompile Include="GameStartPoint.cpp" />
+    <ClCompile Include="GameStartPointMgr.cpp" />
+    <ClCompile Include="GameWorldEditImpl.cpp" />
+    <ClCompile Include="GameWorldPackerImpl.cpp" />
+    <ClCompile Include="GearItems.cpp" />
+    <ClCompile Include="GlobalServerMgr.cpp" />
+    <ClCompile Include="GlobalsInit.cpp" />
+    <ClCompile Include="Group.cpp" />
+    <ClCompile Include="GunMount.cpp" />
+    <ClCompile Include="HHWeaponModel.cpp" />
+    <ClCompile Include="JumpVolume.cpp" />
+    <ClCompile Include="Key.cpp" />
+    <ClCompile Include="KeyFramer.cpp" />
+    <ClCompile Include="KeyframeToRigidBody.cpp" />
+    <ClCompile Include="Ladder.cpp" />
+    <ClCompile Include="LightBase.cpp" />
+    <ClCompile Include="LightCube.cpp" />
+    <ClCompile Include="LightDirectional.cpp" />
+    <ClCompile Include="LightEditor.cpp" />
+    <ClCompile Include="LightPoint.cpp" />
+    <ClCompile Include="LightPointFill.cpp" />
+    <ClCompile Include="LightSpot.cpp" />
+    <ClCompile Include="LookAtTrigger.cpp" />
+    <ClCompile Include="..\..\Engine\sdk\inc\ltengineobjects.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltmemhook.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltmodule.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\sdk\inc\ltobjref.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Shared\MissionDB.cpp" />
+    <ClCompile Include="NamedObjectList.cpp" />
+    <ClCompile Include="NavMarker.cpp" />
+    <ClCompile Include="NoPlayerTrigger.cpp" />
+    <ClCompile Include="ObjectRemover.cpp" />
+    <ClCompile Include="ObjectTemplateMgr.cpp" />
+    <ClCompile Include="ObjectTransformHistory.cpp" />
+    <ClCompile Include="..\..\Engine\sdk\inc\performancemonitorhook.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PhysicsCollisionSystem.cpp" />
+    <ClCompile Include="PhysicsImpulseDirectional.cpp" />
+    <ClCompile Include="PhysicsImpulseRadial.cpp" />
+    <ClCompile Include="PickupItem.cpp" />
+    <ClCompile Include="PlayerInventory.cpp" />
+    <ClCompile Include="PlayerLeash.cpp" />
+    <ClCompile Include="PlayerLure.cpp" />
+    <ClCompile Include="PlayerNodeGoto.cpp" />
+    <ClCompile Include="PlayerObj.cpp" />
+    <ClCompile Include="PlayerTracker.cpp" />
+    <ClCompile Include="PlayerTrigger.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="PolyGrid.cpp" />
+    <ClCompile Include="PolyGridModifier.cpp" />
+    <ClCompile Include="PositionalDamage.cpp" />
+    <ClCompile Include="PrefetchUtilities.cpp" />
+    <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="ProjectileTypes.cpp" />
+    <ClCompile Include="Prop.cpp" />
+    <ClCompile Include="RefillStation.cpp" />
+    <ClCompile Include="RemoteTurret.cpp" />
+    <ClCompile Include="RenderTarget.cpp" />
+    <ClCompile Include="RenderTargetGroup.cpp" />
+    <ClCompile Include="RotatingDoor.cpp" />
+    <ClCompile Include="RotatingSwitch.cpp" />
+    <ClCompile Include="RotatingWorldModel.cpp" />
+    <ClCompile Include="ScaleAlpha.cpp" />
+    <ClCompile Include="ScatterVolume.cpp" />
+    <ClCompile Include="ScmdConsoleDriver_PunkBuster.cpp" />
+    <ClCompile Include="ScmdServer.cpp" />
+    <ClCompile Include="ScreenEffect.cpp" />
+    <ClCompile Include="ServerConnectionMgr.cpp" />
+    <ClCompile Include="ServerDB.cpp" />
+    <ClCompile Include="ServerMeleeCollisionController.cpp" />
+    <ClCompile Include="ServerMissionMgr.cpp" />
+    <ClCompile Include="ServerNodeTrackerContext.cpp" />
+    <ClCompile Include="ServerNonPointSound.cpp" />
+    <ClCompile Include="ServerPhysicsCollisionMgr.cpp" />
+    <ClCompile Include="ServerSaveLoadMgr.cpp" />
+    <ClCompile Include="ServerSoundFX.cpp" />
+    <ClCompile Include="ServerSoundMgr.cpp" />
+    <ClCompile Include="ServerSoundZoneVolume.cpp" />
+    <ClCompile Include="ServerSpecialFX.cpp" />
+    <ClCompile Include="ServerUtilities.cpp" />
+    <ClCompile Include="ServerVoteMgr.cpp" />
+    <ClCompile Include="SlidingDoor.cpp" />
+    <ClCompile Include="SlidingSwitch.cpp" />
+    <ClCompile Include="SlidingWorldModel.cpp" />
+    <ClCompile Include="SnowVolume.cpp" />
+    <ClCompile Include="SonicIntoneHandlers.cpp" />
+    <ClCompile Include="SoundButeFX.cpp" />
+    <ClCompile Include="..\Shared\SoundDB.cpp" />
+    <ClCompile Include="..\Shared\SoundFilterDB.cpp" />
+    <ClCompile Include="..\Shared\SoundMgr.cpp" />
+    <ClCompile Include="..\Shared\SoundOcclusionDB.cpp" />
+    <ClCompile Include="Spawner.cpp" />
+    <ClCompile Include="Speaker.cpp" />
+    <ClCompile Include="SpecialMove.cpp" />
+    <ClCompile Include="SpinningWorldModel.cpp" />
+    <ClCompile Include="StairVolume.cpp" />
+    <ClCompile Include="StartupCommand.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StoryMode.cpp" />
+    <ClCompile Include="StringEditMgrPlugin.cpp" />
+    <ClCompile Include="..\Shared\SurfaceDB.cpp" />
+    <ClCompile Include="..\Shared\SurfaceFunctions.cpp" />
+    <ClCompile Include="Switch.cpp" />
+    <ClCompile Include="TeamBalancer.cpp" />
+    <ClCompile Include="TeamClientFX.cpp" />
+    <ClCompile Include="TeleportPoint.cpp" />
+    <ClCompile Include="TransitionAggregate.cpp" />
+    <ClCompile Include="TransitionArea.cpp" />
+    <ClCompile Include="TransitionMgr.cpp" />
+    <ClCompile Include="Trigger.cpp" />
+    <ClCompile Include="..\Shared\TriggerTypeDB.cpp" />
+    <ClCompile Include="Turret.cpp" />
+    <ClCompile Include="VolumeBrush.cpp" />
+    <ClCompile Include="VolumeBrushTypes.cpp" />
+    <ClCompile Include="VolumeEffect.cpp" />
+    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="WeaponItems.cpp" />
+    <ClCompile Include="WorldModel.cpp" />
+    <ClCompile Include="WorldProperties.cpp" />
+    <ClCompile Include="..\Shared\AssertMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Shared\ActivateTypeHandler.h" />
+    <ClInclude Include="..\Shared\ActivationData.h" />
+    <ClInclude Include="ActiveWorldModel.h" />
+    <ClInclude Include="AI.h" />
+    <ClInclude Include="AIActionAbstract.h" />
+    <ClInclude Include="AIActionAnimate.h" />
+    <ClInclude Include="AIActionAttack.h" />
+    <ClInclude Include="AIActionAttackBurstLimited.h" />
+    <ClInclude Include="AIActionAttackCrouch.h" />
+    <ClInclude Include="AIActionAttackFromAmbush.h" />
+    <ClInclude Include="AIActionAttackFromCover.h" />
+    <ClInclude Include="AIActionAttackFromNode.h" />
+    <ClInclude Include="AIActionAttackFromNodeBounded.h" />
+    <ClInclude Include="AIActionAttackFromSafetyNodeFirePosition.h" />
+    <ClInclude Include="AIActionAttackFromVehicle.h" />
+    <ClInclude Include="AIActionAttackFromVehicleMelee.h" />
+    <ClInclude Include="AIActionAttackFromView.h" />
+    <ClInclude Include="AIActionAttackGrenade.h" />
+    <ClInclude Include="AIActionAttackGrenadeFromCover.h" />
+    <ClInclude Include="AIActionAttackLunge3D.h" />
+    <ClInclude Include="AIActionAttackLungeMelee.h" />
+    <ClInclude Include="AIActionAttackLungeSuicide.h" />
+    <ClInclude Include="AIActionAttackLungeUncloaked.h" />
+    <ClInclude Include="AIActionAttackMelee.h" />
+    <ClInclude Include="AIActionAttackMeleeFromDistance.h" />
+    <ClInclude Include="AIActionAttackMeleeFromRun.h" />
+    <ClInclude Include="AIActionAttackMeleeKick.h" />
+    <ClInclude Include="AIActionAttackMeleeLong.h" />
+    <ClInclude Include="AIActionAttackMeleeUncloaked.h" />
+    <ClInclude Include="AIActionAttackReady.h" />
+    <ClInclude Include="AIActionAttackTurret.h" />
+    <ClInclude Include="AIActionAttackTurretCeiling.h" />
+    <ClInclude Include="AIActionBerserker.h" />
+    <ClInclude Include="AIActionBerserkerRecoil.h" />
+    <ClInclude Include="AIActionBerserkerRecoilDismount.h" />
+    <ClInclude Include="AIActionBlindFireFromCover.h" />
+    <ClInclude Include="AIActionChangePrimaryWeapon.h" />
+    <ClInclude Include="AIActionCounterMeleeBlock.h" />
+    <ClInclude Include="AIActionCounterMeleeDodge.h" />
+    <ClInclude Include="AIActionDeathAnimated.h" />
+    <ClInclude Include="AIActionDeathOnVehicle.h" />
+    <ClInclude Include="AIActionDeathOnVehicleUnanimated.h" />
+    <ClInclude Include="AIActionDefeatedRecoil.h" />
+    <ClInclude Include="AIActionDefeatedTaserRecoil.h" />
+    <ClInclude Include="AIActionDismountNode.h" />
+    <ClInclude Include="AIActionDismountNodeAggressive.h" />
+    <ClInclude Include="AIActionDismountNodeUncloaked.h" />
+    <ClInclude Include="AIActionDismountPlayer.h" />
+    <ClInclude Include="AIActionDismountVehicle.h" />
+    <ClInclude Include="AIActionDodgeBackpedal.h" />
+    <ClInclude Include="AIActionDodgeCovered.h" />
+    <ClInclude Include="AIActionDodgeOnVehicle.h" />
+    <ClInclude Include="AIActionDodgeRoll.h" />
+    <ClInclude Include="AIActionDodgeRollParanoid.h" />
+    <ClInclude Include="AIActionDodgeShuffle.h" />
+    <ClInclude Include="AIActionDrawWeapon.h" />
+    <ClInclude Include="AIActionDropWeapon.h" />
+    <ClInclude Include="AIActionEscapeDanger.h" />
+    <ClInclude Include="AIActionFaceNode.h" />
+    <ClInclude Include="AIActionFinishBlockAttack.h" />
+    <ClInclude Include="AIActionFinishBlockNormal.h" />
+    <ClInclude Include="AIActionFinishingMoveReaction.h" />
+    <ClInclude Include="AIActionFlushOutWithGrenade.h" />
+    <ClInclude Include="AIActionFollow.h" />
+    <ClInclude Include="AIActionFollowHeavyArmor.h" />
+    <ClInclude Include="AIActionFollowPlayer.h" />
+    <ClInclude Include="AIActionFollowWaitAtNode.h" />
+    <ClInclude Include="AIActionGetOutOfTheWay.h" />
+    <ClInclude Include="AIActionGotoAbstract.h" />
+    <ClInclude Include="AIActionGotoFlamePotPosition.h" />
+    <ClInclude Include="AIActionGotoNode.h" />
+    <ClInclude Include="AIActionGotoNode3D.h" />
+    <ClInclude Include="AIActionGotoNodeCovered.h" />
+    <ClInclude Include="AIActionGotoNodeDirect.h" />
+    <ClInclude Include="AIActionGotoNodeOfType.h" />
+    <ClInclude Include="AIActionGotoTarget.h" />
+    <ClInclude Include="AIActionGotoTarget3D.h" />
+    <ClInclude Include="AIActionGotoTargetLost.h" />
+    <ClInclude Include="AIActionGotoValidPosition.h" />
+    <ClInclude Include="AIActionHolsterWeapon.h" />
+    <ClInclude Include="AIActionIdle.h" />
+    <ClInclude Include="AIActionIdleCombat.h" />
+    <ClInclude Include="AIActionIdleFidget.h" />
+    <ClInclude Include="AIActionIdleOnVehicle.h" />
+    <ClInclude Include="AIActionIdleTurret.h" />
+    <ClInclude Include="AIActionInspectDisturbance.h" />
+    <ClInclude Include="AIActionInstantDeath.h" />
+    <ClInclude Include="AIActionInstantDeathKnockedDown.h" />
+    <ClInclude Include="AIActionLongRecoil.h" />
+    <ClInclude Include="AIActionLongRecoilHelmetPiercing.h" />
+    <ClInclude Include="AIActionLookAtDisturbance.h" />
+    <ClInclude Include="AIActionLookAtDisturbanceFromView.h" />
+    <ClInclude Include="AIActionLopeToTargetUncloaked.h" />
+    <ClInclude Include="AIActionMeleeBlocked.h" />
+    <ClInclude Include="AIActionMgr.h" />
+    <ClInclude Include="AIActionMountNode.h" />
+    <ClInclude Include="AIActionMountNodeUncloaked.h" />
+    <ClInclude Include="AIActionMountPlayer.h" />
+    <ClInclude Include="AIActionMountVehicle.h" />
+    <ClInclude Include="AIActionPickupWeaponInWorld.h" />
+    <ClInclude Include="AIActionReactToDanger.h" />
+    <ClInclude Include="AIActionReactToShove.h" />
+    <ClInclude Include="AIActionReactToWeaponBroke.h" />
+    <ClInclude Include="AIActionReload.h" />
+    <ClInclude Include="AIActionReloadCovered.h" />
+    <ClInclude Include="AIActionReloadCrouch.h" />
+    <ClInclude Include="AIActionReloadFromSafetyNode.h" />
+    <ClInclude Include="AIActionShortRecoil.h" />
+    <ClInclude Include="AIActionShortRecoilOnVehicle.h" />
+    <ClInclude Include="AIActionShovePathBlocker.h" />
+    <ClInclude Include="AIActionStunned.h" />
+    <ClInclude Include="AIActionSuppressionFire.h" />
+    <ClInclude Include="AIActionSuppressionFireFromCover.h" />
+    <ClInclude Include="AIActionSurpriseAttackLaunch.h" />
+    <ClInclude Include="AIActionSurprised.h" />
+    <ClInclude Include="AIActionSurveyArea.h" />
+    <ClInclude Include="AIActionTaseredLevel1.h" />
+    <ClInclude Include="AIActionTaseredLevel2.h" />
+    <ClInclude Include="AIActionTaseredRecovery.h" />
+    <ClInclude Include="AIActionTraverseBlockedDoor.h" />
+    <ClInclude Include="AIActionTraverseLink.h" />
+    <ClInclude Include="AIActionTraverseLinkUncloaked.h" />
+    <ClInclude Include="AIActionUncover.h" />
+    <ClInclude Include="AIActionUseSmartObjectNode.h" />
+    <ClInclude Include="AIActionUseSmartObjectNodeMounted.h" />
+    <ClInclude Include="AIActionWaitForBlockedPath.h" />
+    <ClInclude Include="AIActionWaitForFollowerToCatchUp.h" />
+    <ClInclude Include="AIActivityAbstract.h" />
+    <ClInclude Include="AIActivityAdvanceCover.h" />
+    <ClInclude Include="AIActivityExchangeWeapons.h" />
+    <ClInclude Include="AIActivityGetToCover.h" />
+    <ClInclude Include="AIActivityOrderlyAdvance.h" />
+    <ClInclude Include="AIActivitySearch.h" />
+    <ClInclude Include="AIAssert.h" />
+    <ClInclude Include="AIAStarMachine.h" />
+    <ClInclude Include="AIAStarNavMesh.h" />
+    <ClInclude Include="AIAStarNavMeshEscape.h" />
+    <ClInclude Include="AIAStarNavMeshSafe.h" />
+    <ClInclude Include="AIAStarPlanner.h" />
+    <ClInclude Include="AIAStarStorageLinkedList.h" />
+    <ClInclude Include="AIBlackBoard.h" />
+    <ClInclude Include="AIBrain.h" />
+    <ClInclude Include="AICharacterTypeRestrictions.h" />
+    <ClInclude Include="AIClassFactory.h" />
+    <ClInclude Include="AICombatOpportunity.h" />
+    <ClInclude Include="AICombatOpportunityRadius.h" />
+    <ClInclude Include="AICommandMgr.h" />
+    <ClInclude Include="AIConfig.h" />
+    <ClInclude Include="AICoordinator.h" />
+    <ClInclude Include="AIDB.h" />
+    <ClInclude Include="AIEnumActionAbilityTypes.h" />
+    <ClInclude Include="AIEnumActionTypes.h" />
+    <ClInclude Include="AIEnumActivityTypes.h" />
+    <ClInclude Include="AIEnumAIAwareness.h" />
+    <ClInclude Include="AIEnumAIThreatPosition.h" />
+    <ClInclude Include="AIEnumAIWeaponClassTypeValues.h" />
+    <ClInclude Include="AIEnumAIWeaponTypes.h" />
+    <ClInclude Include="AIEnumAIWeaponTypeValues.h" />
+    <ClInclude Include="AIEnumAwarenessModifiers.h" />
+    <ClInclude Include="AIEnumAwarenessModifierValues.h" />
+    <ClInclude Include="AIEnumContexts.h" />
+    <ClInclude Include="AIEnumContextValues.h" />
+    <ClInclude Include="AIEnumNavMeshLinkTypes.h" />
+    <ClInclude Include="AIEnumNavMeshLinkTypeValues.h" />
+    <ClInclude Include="AIEnumNavMeshTypes.h" />
+    <ClInclude Include="AIEnumNodeDependencyTypes.h" />
+    <ClInclude Include="AIEnumNodeDependencyTypeValues.h" />
+    <ClInclude Include="AIEnumNodeStatus.h" />
+    <ClInclude Include="AIEnumSensorTypes.h" />
+    <ClInclude Include="AIEnumStateTypes.h" />
+    <ClInclude Include="AIEnumStateTypeValues.h" />
+    <ClInclude Include="AIEnumStimulusTypes.h" />
+    <ClInclude Include="AIEnumStimulusTypeValues.h" />
+    <ClInclude Include="AIEnumTouch.h" />
+    <ClInclude Include="AIGoalAbstract.h" />
+    <ClInclude Include="AIGoalAlert.h" />
+    <ClInclude Include="AIGoalAmbush.h" />
+    <ClInclude Include="AIGoalAnimate.h" />
+    <ClInclude Include="AIGoalAnimateInterrupt.h" />
+    <ClInclude Include="AIGoalBerserker.h" />
+    <ClInclude Include="AIGoalBlitzAndUseNode.h" />
+    <ClInclude Include="AIGoalBlitzCharacter.h" />
+    <ClInclude Include="AIGoalBlitzNode.h" />
+    <ClInclude Include="AIGoalChangePrimaryWeapon.h" />
+    <ClInclude Include="AIGoalCharge.h" />
+    <ClInclude Include="AIGoalChase.h" />
+    <ClInclude Include="AIGoalChaseBerserker.h" />
+    <ClInclude Include="AIGoalCircleFlamePot.h" />
+    <ClInclude Include="AIGoalCombatOpportunityAttack.h" />
+    <ClInclude Include="AIGoalCorrectPosition.h" />
+    <ClInclude Include="AIGoalCounterMelee.h" />
+    <ClInclude Include="AIGoalCover.h" />
+    <ClInclude Include="AIGoalCritterFlee.h" />
+    <ClInclude Include="AIGoalDeath.h" />
+    <ClInclude Include="AIGoalDefeated.h" />
+    <ClInclude Include="AIGoalDismountVehicle.h" />
+    <ClInclude Include="AIGoalDodge.h" />
+    <ClInclude Include="AIGoalEscapeDanger.h" />
+    <ClInclude Include="AIGoalExitLink.h" />
+    <ClInclude Include="AIGoalFallBack.h" />
+    <ClInclude Include="AIGoalFinishBlockFailure.h" />
+    <ClInclude Include="AIGoalFinishBlockSuccess.h" />
+    <ClInclude Include="AIGoalFlee.h" />
+    <ClInclude Include="AIGoalFlushOut.h" />
+    <ClInclude Include="AIGoalFlyAway.h" />
+    <ClInclude Include="AIGoalFollow.h" />
+    <ClInclude Include="AIGoalFollowHide.h" />
+    <ClInclude Include="AIGoalFollowWait.h" />
+    <ClInclude Include="AIGoalGoto.h" />
+    <ClInclude Include="AIGoalGuard.h" />
+    <ClInclude Include="AIGoalIdle.h" />
+    <ClInclude Include="AIGoalIntro.h" />
+    <ClInclude Include="AIGoalInvestigate.h" />
+    <ClInclude Include="AIGoalKillEnemy.h" />
+    <ClInclude Include="AIGoalLead.h" />
+    <ClInclude Include="AIGoalMenace.h" />
+    <ClInclude Include="AIGoalMgr.h" />
+    <ClInclude Include="AIGoalMountVehicle.h" />
+    <ClInclude Include="AIGoalPatrol.h" />
+    <ClInclude Include="AIGoalPickupWeapon.h" />
+    <ClInclude Include="AIGoalReactToBerserkerKick.h" />
+    <ClInclude Include="AIGoalReactToBlockedPath.h" />
+    <ClInclude Include="AIGoalReactToDamage.h" />
+    <ClInclude Include="AIGoalReactToFinishingMove.h" />
+    <ClInclude Include="AIGoalReactToFollowerFallingBehind.h" />
+    <ClInclude Include="AIGoalReactToMeleeBlocked.h" />
+    <ClInclude Include="AIGoalReactToShove.h" />
+    <ClInclude Include="AIGoalReactToWeaponBroke.h" />
+    <ClInclude Include="AIGoalRetreat.h" />
+    <ClInclude Include="AIGoalRetreatLimited.h" />
+    <ClInclude Include="AIGoalScan.h" />
+    <ClInclude Include="AIGoalSearch.h" />
+    <ClInclude Include="AIGoalSearchFollow.h" />
+    <ClInclude Include="AIGoalSearchLostTarget.h" />
+    <ClInclude Include="AIGoalSelfDefense.h" />
+    <ClInclude Include="AIGoalStalk.h" />
+    <ClInclude Include="AIGoalStunned.h" />
+    <ClInclude Include="AIGoalSuppressEnemy.h" />
+    <ClInclude Include="AIGoalSurpriseAttackLaunch.h" />
+    <ClInclude Include="AIGoalTraverseLink.h" />
+    <ClInclude Include="AIGoalTypeEnums.h" />
+    <ClInclude Include="AIGoalUseArmoredAutonomous.h" />
+    <ClInclude Include="AIGoalUseSmartObject.h" />
+    <ClInclude Include="AIGoalUseSmartObjectCombat.h" />
+    <ClInclude Include="AIGoalWork.h" />
+    <ClInclude Include="AIGoalWorkTargetless.h" />
+    <ClInclude Include="AIMgr.h" />
+    <ClInclude Include="AIMovement.h" />
+    <ClInclude Include="AIMovementUtils.h" />
+    <ClInclude Include="AINavigationMgr.h" />
+    <ClInclude Include="AINavMesh.h" />
+    <ClInclude Include="AINavMeshGen.h" />
+    <ClInclude Include="AINavMeshGenCarver.h" />
+    <ClInclude Include="AINavMeshGenMacros.h" />
+    <ClInclude Include="AINavMeshGenPoly.h" />
+    <ClInclude Include="AINavMeshGenQuadTree.h" />
+    <ClInclude Include="AINavMeshGenTypes.h" />
+    <ClInclude Include="AINavMeshLink.h" />
+    <ClInclude Include="AINavMeshLinkAbstract.h" />
+    <ClInclude Include="AINavMeshLinkAbstractOneAnim.h" />
+    <ClInclude Include="AINavMeshLinkClimb.h" />
+    <ClInclude Include="AINavMeshLinkCrawl.h" />
+    <ClInclude Include="AINavMeshLinkDiveThru.h" />
+    <ClInclude Include="AINavMeshLinkDoor.h" />
+    <ClInclude Include="AINavMeshLinkDuckRun.h" />
+    <ClInclude Include="AINavMeshLinkDuckUnder.h" />
+    <ClInclude Include="AINavMeshLinkExit.h" />
+    <ClInclude Include="AINavMeshLinkFlamePot.h" />
+    <ClInclude Include="AINavMeshLinkFlyThru.h" />
+    <ClInclude Include="AINavMeshLinkJump.h" />
+    <ClInclude Include="AINavMeshLinkJumpOver.h" />
+    <ClInclude Include="AINavMeshLinkLoseTarget.h" />
+    <ClInclude Include="AINavMeshLinkPlayer.h" />
+    <ClInclude Include="AINavMeshLinkStairs.h" />
+    <ClInclude Include="AINode.h" />
+    <ClInclude Include="AINodeArmored.h" />
+    <ClInclude Include="AINodeCluster.h" />
+    <ClInclude Include="AINodeCombatOpportunity.h" />
+    <ClInclude Include="AINodeCombatOpportunityView.h" />
+    <ClInclude Include="AINodeDarkChant.h" />
+    <ClInclude Include="AINodeDarkWait.h" />
+    <ClInclude Include="AINodeFallBack.h" />
+    <ClInclude Include="AINodeFollow.h" />
+    <ClInclude Include="AINodeGuard.h" />
+    <ClInclude Include="AINodeHide.h" />
+    <ClInclude Include="AINodeInterest.h" />
+    <ClInclude Include="AINodeIntro.h" />
+    <ClInclude Include="AINodeLead.h" />
+    <ClInclude Include="AINodeMgr.h" />
+    <ClInclude Include="AINodePickupWeapon.h" />
+    <ClInclude Include="AINodeSafety.h" />
+    <ClInclude Include="AINodeSafetyFirePosition.h" />
+    <ClInclude Include="AINodeScanner.h" />
+    <ClInclude Include="AINodeStalk.h" />
+    <ClInclude Include="AINodeStimulus.h" />
+    <ClInclude Include="AINodeSurprise.h" />
+    <ClInclude Include="AINodeTrackerContext.h" />
+    <ClInclude Include="AINodeTypeEnums.h" />
+    <ClInclude Include="AINodeTypes.h" />
+    <ClInclude Include="AINodeValidators.h" />
+    <ClInclude Include="AIPathKnowledgeMgr.h" />
+    <ClInclude Include="AIPathMgrNavMesh.h" />
+    <ClInclude Include="AIPlanner.h" />
+    <ClInclude Include="AIQuadTree.h" />
+    <ClInclude Include="AIRegion.h" />
+    <ClInclude Include="AISenseTypeEnums.h" />
+    <ClInclude Include="AISensorAbstract.h" />
+    <ClInclude Include="AISensorAbstractStimulatable.h" />
+    <ClInclude Include="AISensorAwarenessMod.h" />
+    <ClInclude Include="AISensorBerserker.h" />
+    <ClInclude Include="AISensorCloak.h" />
+    <ClInclude Include="AISensorCombatOpportunity.h" />
+    <ClInclude Include="AISensorCoolMove.h" />
+    <ClInclude Include="AISensorCounterMelee.h" />
+    <ClInclude Include="AISensorCritter.h" />
+    <ClInclude Include="AISensorDamage.h" />
+    <ClInclude Include="AISensorDamageFX.h" />
+    <ClInclude Include="AISensorDamageTurret.h" />
+    <ClInclude Include="AISensorEnemyDamaged.h" />
+    <ClInclude Include="AISensorEnemyDamagedSuicide.h" />
+    <ClInclude Include="AISensorFlamePot.h" />
+    <ClInclude Include="AISensorFlashlight.h" />
+    <ClInclude Include="AISensorFlyThru.h" />
+    <ClInclude Include="AISensorGuard.h" />
+    <ClInclude Include="AISensorHearDisturbance.h" />
+    <ClInclude Include="AISensorInstantDeath.h" />
+    <ClInclude Include="AISensorLocation.h" />
+    <ClInclude Include="AISensorLostTarget.h" />
+    <ClInclude Include="AISensorLunge.h" />
+    <ClInclude Include="AISensorMgr.h" />
+    <ClInclude Include="AISensorNode.h" />
+    <ClInclude Include="AISensorNodeCombat.h" />
+    <ClInclude Include="AISensorNodeFollow.h" />
+    <ClInclude Include="AISensorNodeGuarded.h" />
+    <ClInclude Include="AISensorNodeInterest.h" />
+    <ClInclude Include="AISensorNodeSafetyFirePosition.h" />
+    <ClInclude Include="AISensorNodeSearch.h" />
+    <ClInclude Include="AISensorNodeStalk.h" />
+    <ClInclude Include="AISensorPassTarget.h" />
+    <ClInclude Include="AISensorPatrol.h" />
+    <ClInclude Include="AISensorPersonalBubble.h" />
+    <ClInclude Include="AISensorPlayerTooClose.h" />
+    <ClInclude Include="AISensorPulse.h" />
+    <ClInclude Include="AISensorScanner.h" />
+    <ClInclude Include="AISensorSeeDanger.h" />
+    <ClInclude Include="AISensorSeeDisturbance.h" />
+    <ClInclude Include="AISensorSeeEnemy.h" />
+    <ClInclude Include="AISensorSeeEnemyNoFOV.h" />
+    <ClInclude Include="AISensorSeeEnemyNoShootThru.h" />
+    <ClInclude Include="AISensorSeeFlashlightBeam.h" />
+    <ClInclude Include="AISensorSeekEnemy.h" />
+    <ClInclude Include="AISensorShoved.h" />
+    <ClInclude Include="AISensorSlowMo.h" />
+    <ClInclude Include="AISensorSquadCommunicationThreat.h" />
+    <ClInclude Include="AISensorStatusCheck.h" />
+    <ClInclude Include="AISensorTargetIsAimingAtMe.h" />
+    <ClInclude Include="AISensorTargetIsAimingAtMeMelee.h" />
+    <ClInclude Include="AISensorTargetIsAimingAtMeParanoid.h" />
+    <ClInclude Include="AISensorTargetIsAwareOfMyPosition.h" />
+    <ClInclude Include="AISensorTouch.h" />
+    <ClInclude Include="AISensorTraitor.h" />
+    <ClInclude Include="AISensorValidPosition.h" />
+    <ClInclude Include="AISensorView.h" />
+    <ClInclude Include="AISensorWeaponItem.h" />
+    <ClInclude Include="AISoundDB.h" />
+    <ClInclude Include="AISoundMgr.h" />
+    <ClInclude Include="AISounds.h" />
+    <ClInclude Include="AISoundTypeEnums.h" />
+    <ClInclude Include="AISpawner.h" />
+    <ClInclude Include="AISquad.h" />
+    <ClInclude Include="AIState.h" />
+    <ClInclude Include="AIStateAnimate.h" />
+    <ClInclude Include="AIStateGoto.h" />
+    <ClInclude Include="AIStateUseSmartObject.h" />
+    <ClInclude Include="AIStimulusMgr.h" />
+    <ClInclude Include="AIStreamSim.h" />
+    <ClInclude Include="AITarget.h" />
+    <ClInclude Include="AITargetSelectAbstract.h" />
+    <ClInclude Include="AITargetSelectAllyDisturbance.h" />
+    <ClInclude Include="AITargetSelectBerserker.h" />
+    <ClInclude Include="AITargetSelectCharacter.h" />
+    <ClInclude Include="AITargetSelectCharacterOnlyOne.h" />
+    <ClInclude Include="AITargetSelectCharacterSquad.h" />
+    <ClInclude Include="AITargetSelectCharacterUrgent.h" />
+    <ClInclude Include="AITargetSelectCharacterUrgentSpatial.h" />
+    <ClInclude Include="AITargetSelectCombatOpportunity.h" />
+    <ClInclude Include="AITargetSelectDamager.h" />
+    <ClInclude Include="AITargetSelectDisturbance.h" />
+    <ClInclude Include="AITargetSelectDisturbanceBeyondGuard.h" />
+    <ClInclude Include="AITargetSelectDisturbanceSource.h" />
+    <ClInclude Include="AITargetSelectDisturbanceSquad.h" />
+    <ClInclude Include="AITargetSelectDisturbanceUrgent.h" />
+    <ClInclude Include="AITargetSelectFollower.h" />
+    <ClInclude Include="AITargetSelectInterest.h" />
+    <ClInclude Include="AITargetSelectLeader.h" />
+    <ClInclude Include="AITargetSelectMgr.h" />
+    <ClInclude Include="AITargetSelectPlayerTurret.h" />
+    <ClInclude Include="AITargetSelectScripted.h" />
+    <ClInclude Include="AITargetSelectTraitor.h" />
+    <ClInclude Include="AITargetSelectWeaponItem.h" />
+    <ClInclude Include="AIUtils.h" />
+    <ClInclude Include="AIWeaponAbstract.h" />
+    <ClInclude Include="AIWeaponMelee.h" />
+    <ClInclude Include="AIWeaponMgr.h" />
+    <ClInclude Include="AIWeaponRanged.h" />
+    <ClInclude Include="AIWeaponThrown.h" />
+    <ClInclude Include="AIWeaponUtils.h" />
+    <ClInclude Include="AIWorkingMemory.h" />
+    <ClInclude Include="AIWorkingMemoryCentral.h" />
+    <ClInclude Include="AIWorldState.h" />
+    <ClInclude Include="Alarm.h" />
+    <ClInclude Include="AmmoBox.h" />
+    <ClInclude Include="..\Shared\AnimationDescriptorEnums.h" />
+    <ClInclude Include="..\Shared\AnimationDescriptorGroupEnums.h" />
+    <ClInclude Include="..\Shared\AnimationDescriptors.h" />
+    <ClInclude Include="..\Shared\AnimationDescriptorStrings.h" />
+    <ClInclude Include="..\Shared\AnimationProp.h" />
+    <ClInclude Include="..\Shared\AnimationPropEnums.h" />
+    <ClInclude Include="..\Shared\AnimationPropGroupEnums.h" />
+    <ClInclude Include="..\Shared\AnimationPropStrings.h" />
+    <ClInclude Include="..\Shared\Animator.h" />
+    <ClInclude Include="AnimatorPlayer.h" />
+    <ClInclude Include="Arsenal.h" />
+    <ClInclude Include="..\Shared\AssertMgr.h" />
+    <ClInclude Include="..\Shared\AttachmentDB.h" />
+    <ClInclude Include="Attachments.h" />
+    <ClInclude Include="AutoAimMagnet.h" />
+    <ClInclude Include="..\Shared\AutoMessage.h" />
+    <ClInclude Include="BanIPMgr.h" />
+    <ClInclude Include="BanUserMgr.h" />
+    <ClInclude Include="..\Shared\BuildDefines.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="..\Shared\CharacterAlignment.h" />
+    <ClInclude Include="CharacterHitBox.h" />
+    <ClInclude Include="CharacterMgr.h" />
+    <ClInclude Include="..\Shared\CheatDefs.h" />
+    <ClInclude Include="..\Shared\ClientServerShared.h" />
+    <ClInclude Include="ClientWeaponSFX.h" />
+    <ClInclude Include="CommandDB.h" />
+    <ClInclude Include="..\Shared\CommandIDs.h" />
+    <ClInclude Include="CommandMgr.h" />
+    <ClInclude Include="CommandObject.h" />
+    <ClInclude Include="..\Shared\CommonUtilities.h" />
+    <ClInclude Include="ConstraintBase.h" />
+    <ClInclude Include="ConstraintHinge.h" />
+    <ClInclude Include="ConstraintLimitedHinge.h" />
+    <ClInclude Include="ConstraintPoint.h" />
+    <ClInclude Include="ConstraintPrismatic.h" />
+    <ClInclude Include="ConstraintRagdoll.h" />
+    <ClInclude Include="ConstraintStiffSpring.h" />
+    <ClInclude Include="ConstraintWheel.h" />
+    <ClInclude Include="..\Shared\ContainerCodes.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="ControlPoint.h" />
+    <ClInclude Include="..\Shared\CTFDB.h" />
+    <ClInclude Include="CTFFlag.h" />
+    <ClInclude Include="CTFFlagBase.h" />
+    <ClInclude Include="CVarTrack.h" />
+    <ClInclude Include="DamageTracker.h" />
+    <ClInclude Include="..\Shared\DamageTypes.h" />
+    <ClInclude Include="..\Shared\DamageTypesEnum.h" />
+    <ClInclude Include="..\Shared\DatabaseUtils.h" />
+    <ClInclude Include="..\Shared\DebugLine.h" />
+    <ClInclude Include="DebugLineSystem.h" />
+    <ClInclude Include="..\Shared\DebugNew.h" />
+    <ClInclude Include="DecisionObject.h" />
+    <ClInclude Include="DEditColors.h" />
+    <ClInclude Include="Destructible.h" />
+    <ClInclude Include="DestructibleModel.h" />
+    <ClInclude Include="DestructibleWorldModel.h" />
+    <ClInclude Include="Dialogue.h" />
+    <ClInclude Include="DisplayMeter.h" />
+    <ClInclude Include="DisplayTimer.h" />
+    <ClInclude Include="Door.h" />
+    <ClInclude Include="DynamicSectorVolume.h" />
+    <ClInclude Include="EntryToolLock.h" />
+    <ClInclude Include="EventCounter.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="Flicker.h" />
+    <ClInclude Include="..\Shared\ForceVolume.h" />
+    <ClInclude Include="ForensicObject.h" />
+    <ClInclude Include="..\Shared\FXDB.h" />
+    <ClInclude Include="..\Shared\FxDefs.h" />
+    <ClInclude Include="..\Shared\FxFlags.h" />
+    <ClInclude Include="GameBase.h" />
+    <ClInclude Include="..\Shared\GameDatabaseMgr.h" />
+    <ClInclude Include="GameServerShell.h" />
+    <ClInclude Include="GameStartPoint.h" />
+    <ClInclude Include="GameStartPointMgr.h" />
+    <ClInclude Include="GameWorldEditImpl.h" />
+    <ClInclude Include="GameWorldPackerImpl.h" />
+    <ClInclude Include="GearItems.h" />
+    <ClInclude Include="..\Shared\GlobalMgr.h" />
+    <ClInclude Include="GlobalServerMgr.h" />
+    <ClInclude Include="Group.h" />
+    <ClInclude Include="GunMount.h" />
+    <ClInclude Include="HHWeaponModel.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\IGameWorldPacker.h" />
+    <ClInclude Include="IHitBoxUser.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\iltbaseclass.h" />
+    <ClInclude Include="JumpVolume.h" />
+    <ClInclude Include="Key.h" />
+    <ClInclude Include="KeyFramer.h" />
+    <ClInclude Include="KeyframeToRigidBody.h" />
+    <ClInclude Include="Ladder.h" />
+    <ClInclude Include="LightBase.h" />
+    <ClInclude Include="LightCube.h" />
+    <ClInclude Include="LightDirectional.h" />
+    <ClInclude Include="LightEditor.h" />
+    <ClInclude Include="LightPoint.h" />
+    <ClInclude Include="LightPointFill.h" />
+    <ClInclude Include="LightSpot.h" />
+    <ClInclude Include="LookAtTrigger.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\ltengineobjects.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\ltmodule.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\ltobjref.h" />
+    <ClInclude Include="..\Shared\MissionDB.h" />
+    <ClInclude Include="..\Shared\MsgIDs.h" />
+    <ClInclude Include="MusicMgr.h" />
+    <ClInclude Include="NamedObjectList.h" />
+    <ClInclude Include="NavMarker.h" />
+    <ClInclude Include="..\Shared\NavMarkerTypeDB.h" />
+    <ClInclude Include="..\Shared\NetDefs.h" />
+    <ClInclude Include="..\Shared\NodeTracker.h" />
+    <ClInclude Include="..\Shared\NodeTrackerContext.h" />
+    <ClInclude Include="NoPlayerTrigger.h" />
+    <ClInclude Include="ObjectMsgs.h" />
+    <ClInclude Include="ObjectRemover.h" />
+    <ClInclude Include="ObjectTemplateMgr.h" />
+    <ClInclude Include="ObjectTransformHistory.h" />
+    <ClInclude Include="..\Shared\ParsedMsg.h" />
+    <ClInclude Include="PhysicsCollisionSystem.h" />
+    <ClInclude Include="PhysicsImpulseDirectional.h" />
+    <ClInclude Include="PhysicsImpulseRadial.h" />
+    <ClInclude Include="PickupItem.h" />
+    <ClInclude Include="PlayerButes.h" />
+    <ClInclude Include="PlayerInventory.h" />
+    <ClInclude Include="PlayerLeash.h" />
+    <ClInclude Include="PlayerLure.h" />
+    <ClInclude Include="PlayerNodeGoto.h" />
+    <ClInclude Include="PlayerObj.h" />
+    <ClInclude Include="PlayerTracker.h" />
+    <ClInclude Include="PlayerTrigger.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="PolyGrid.h" />
+    <ClInclude Include="PolyGridModifier.h" />
+    <ClInclude Include="PositionalDamage.h" />
+    <ClInclude Include="PrefetchUtilities.h" />
+    <ClInclude Include="..\Shared\ProfileUtils.h" />
+    <ClInclude Include="Projectile.h" />
+    <ClInclude Include="ProjectileTypes.h" />
+    <ClInclude Include="Prop.h" />
+    <ClInclude Include="RefillStation.h" />
+    <ClInclude Include="RemoteTurret.h" />
+    <ClInclude Include="RenderTarget.h" />
+    <ClInclude Include="RenderTargetGroup.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="RotatingDoor.h" />
+    <ClInclude Include="RotatingSwitch.h" />
+    <ClInclude Include="RotatingWorldModel.h" />
+    <ClInclude Include="..\Shared\SaveLoadMgr.h" />
+    <ClInclude Include="ScaleAlpha.h" />
+    <ClInclude Include="ScatterVolume.h" />
+    <ClInclude Include="ScmdConsoleDriver_PunkBuster.h" />
+    <ClInclude Include="ScmdServer.h" />
+    <ClInclude Include="..\Shared\ScmdShared.h" />
+    <ClInclude Include="ScreenEffect.h" />
+    <ClInclude Include="..\Shared\ScreenEffectDB.h" />
+    <ClInclude Include="ServerConnectionMgr.h" />
+    <ClInclude Include="ServerDB.h" />
+    <ClInclude Include="ServerMeleeCollisionController.h" />
+    <ClInclude Include="ServerMissionMgr.h" />
+    <ClInclude Include="ServerMissionSettings.h" />
+    <ClInclude Include="ServerNodeTrackerContext.h" />
+    <ClInclude Include="ServerNonPointSound.h" />
+    <ClInclude Include="ServerPhysicsCollisionMgr.h" />
+    <ClInclude Include="ServerRes.h" />
+    <ClInclude Include="ServerSaveLoadMgr.h" />
+    <ClInclude Include="ServerSoundFX.h" />
+    <ClInclude Include="ServerSoundMgr.h" />
+    <ClInclude Include="ServerSoundZoneVolume.h" />
+    <ClInclude Include="ServerSpecialFX.h" />
+    <ClInclude Include="ServerUtilities.h" />
+    <ClInclude Include="ServerVoteMgr.h" />
+    <ClInclude Include="..\Shared\SFXMsgIds.h" />
+    <ClInclude Include="..\Shared\SharedBaseFXStructs.h" />
+    <ClInclude Include="..\Shared\SharedFXStructs.h" />
+    <ClInclude Include="..\Shared\SharedMission.h" />
+    <ClInclude Include="..\Shared\SharedMovement.h" />
+    <ClInclude Include="..\Shared\SharedScoring.h" />
+    <ClInclude Include="..\Shared\ShatterTypeDB.h" />
+    <ClInclude Include="SlidingDoor.h" />
+    <ClInclude Include="SlidingSwitch.h" />
+    <ClInclude Include="SlidingWorldModel.h" />
+    <ClInclude Include="SnowVolume.h" />
+    <ClInclude Include="SonicIntoneHandlers.h" />
+    <ClInclude Include="SoundButeFX.h" />
+    <ClInclude Include="..\Shared\SoundDB.h" />
+    <ClInclude Include="..\Shared\SoundFilterDB.h" />
+    <ClInclude Include="..\Shared\SoundFilterParameterEnum.h" />
+    <ClInclude Include="..\Shared\SoundMgr.h" />
+    <ClInclude Include="..\Shared\SoundOcclusionDB.h" />
+    <ClInclude Include="Spawner.h" />
+    <ClInclude Include="Speaker.h" />
+    <ClInclude Include="SpecialMove.h" />
+    <ClInclude Include="SpinningWorldModel.h" />
+    <ClInclude Include="StairVolume.h" />
+    <ClInclude Include="StartupCommand.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="StoryMode.h" />
+    <ClInclude Include="StringEditMgrPlugin.h" />
+    <ClInclude Include="..\Shared\SurfaceDB.h" />
+    <ClInclude Include="SurfaceFlagsOverrideHelpers.h" />
+    <ClInclude Include="..\Shared\SurfaceFunctions.h" />
+    <ClInclude Include="Switch.h" />
+    <ClInclude Include="TeamBalancer.h" />
+    <ClInclude Include="TeamClientFX.h" />
+    <ClInclude Include="..\Shared\TeamClientFXDB.h" />
+    <ClInclude Include="..\Shared\TeamMgr.h" />
+    <ClInclude Include="TeleportPoint.h" />
+    <ClInclude Include="..\Shared\TemplateList.h" />
+    <ClInclude Include="TransitionAggregate.h" />
+    <ClInclude Include="TransitionArea.h" />
+    <ClInclude Include="TransitionMgr.h" />
+    <ClInclude Include="Trigger.h" />
+    <ClInclude Include="..\Shared\TriggerTypeDB.h" />
+    <ClInclude Include="Turret.h" />
+    <ClInclude Include="..\Shared\VersionMgr.h" />
+    <ClInclude Include="VolumeBrush.h" />
+    <ClInclude Include="VolumeBrushTypes.h" />
+    <ClInclude Include="VolumeEffect.h" />
+    <ClInclude Include="..\Shared\WaveFn.h" />
+    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="..\Shared\WeaponDB.h" />
+    <ClInclude Include="WeaponFireInfo.h" />
+    <ClInclude Include="..\Shared\WeaponFXTypes.h" />
+    <ClInclude Include="WeaponItems.h" />
+    <ClInclude Include="..\Shared\WinUtil.h" />
+    <ClInclude Include="WorldModel.h" />
+    <ClInclude Include="WorldProperties.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Game_ServerShell.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\stdlith\Shared_StdLith.vcxproj">
+      <Project>{e37ef250-69d4-4878-9a98-ebd70407f954}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Game_Shared_Server.vcxproj">
+      <Project>{87fab978-4abb-4f85-8542-a8d61b4cb109}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

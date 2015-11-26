@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4DF920AF-94FD-48BF-A06F-CBF145894C3B}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <OutDir>.\..\..\built\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <CustomBuildStep>
+      <Command>echo xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+</Command>
+      <Outputs>$(OutDir)..\..\..\Dev\Runtime\Game\$(TargetFileName);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>$(OutDir)$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\Shared;.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\libs\ltguimgr;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_CLIENTBUILD;WIN32;_WINDOWS;NO_PRAGMA_LIBS;MEMTRACK_CLIENT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4530;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\..\Engine\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>shell32.lib;winmm.lib;Ws2_32.lib;shlwapi.lib;Shared_CRC.lib;shared_assert.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameClient.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\Engine\sdk\lib\win;..\..\Engine\sdk\lib\win\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildStep>
+      <Command>echo xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+</Command>
+      <Outputs>$(OutDir)..\..\..\Dev\Runtime\Game\$(TargetFileName);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>$(OutDir)$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Shared;.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\libs\ltguimgr;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_CLIENTBUILD;WIN32;_WINDOWS;MEMTRACK_CLIENT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\..\Engine\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>shell32.lib;winmm.lib;Ws2_32.lib;shlwapi.lib;Shared_CRC.lib;shared_assert.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameClient.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\Engine\sdk\lib\win;..\..\Engine\sdk\lib\win\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <CustomBuildStep>
+      <Command>echo xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+xcopy "$(TargetPath)" "$(OutDir)..\..\..\Dev\Runtime\Game\" /Y /I /F /R
+</Command>
+      <Outputs>$(OutDir)..\..\..\Dev\Runtime\Game\$(TargetFileName);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>$(OutDir)$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\Shared;.\;..\..\Engine\sdk\inc;..\..\libs\stdlith;..\libs\ltguimgr;..\..\libs\platform;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_CLIENTBUILD;WIN32;_WINDOWS;NO_PRAGMA_LIBS;_FINAL;MEMTRACK_CLIENT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4530;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\..\Engine\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>shell32.lib;winmm.lib;Ws2_32.lib;shlwapi.lib;Shared_CRC.lib;shared_assert.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameClient.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\Engine\sdk\lib\win;..\..\Engine\sdk\lib\win\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AccuracyMgr.cpp" />
+    <ClCompile Include="AccuracyVisualization.cpp" />
+    <ClCompile Include="ActivateObjectFX.cpp" />
+    <ClCompile Include="AimMagnetFX.cpp" />
+    <ClCompile Include="AimMgr.cpp" />
+    <ClCompile Include="AutoTargetMgr.cpp" />
+    <ClCompile Include="BaseMenu.cpp" />
+    <ClCompile Include="BaseScreen.cpp" />
+    <ClCompile Include="BindMgr.cpp" />
+    <ClCompile Include="CameraOffsetMgr.cpp" />
+    <ClCompile Include="CharacterDisplay.cpp" />
+    <ClCompile Include="CharacterFX.cpp" />
+    <ClCompile Include="CheatMgr.cpp" />
+    <ClCompile Include="client_physics.cpp" />
+    <ClCompile Include="ClientConnectionMgr.cpp" />
+    <ClCompile Include="ClientDB.cpp" />
+    <ClCompile Include="ClientFXInstance.cpp" />
+    <ClCompile Include="ClientFXMgr.cpp" />
+    <ClCompile Include="ClientFXSequence.cpp" />
+    <ClCompile Include="ClientInfoMgr.cpp" />
+    <ClCompile Include="ClientMeleeCollisionController.cpp" />
+    <ClCompile Include="ClientNodeTrackerContext.cpp" />
+    <ClCompile Include="ClientPhysicsCollisionMgr.cpp" />
+    <ClCompile Include="ClientSaveLoadMgr.cpp" />
+    <ClCompile Include="ClientSoundMgr.cpp" />
+    <ClCompile Include="ClientSoundMixer.cpp" />
+    <ClCompile Include="ClientSoundNonPointFX.cpp" />
+    <ClCompile Include="ClientUtilities.cpp" />
+    <ClCompile Include="ClientVoteMgr.cpp" />
+    <ClCompile Include="ClientWeapon.cpp" />
+    <ClCompile Include="ClientWeaponMgr.cpp" />
+    <ClCompile Include="ClientWeaponUtils.cpp" />
+    <ClCompile Include="CMoveMgr.cpp" />
+    <ClCompile Include="ConditionalAnimationController.cpp" />
+    <ClCompile Include="ControlPointSFX.cpp" />
+    <ClCompile Include="Credits.cpp" />
+    <ClCompile Include="CTFFlagBaseSFX.cpp" />
+    <ClCompile Include="CTFFlagSFX.cpp" />
+    <ClCompile Include="CursorMgr.cpp" />
+    <ClCompile Include="CustomCtrls.cpp" />
+    <ClCompile Include="DamageFXMgr.cpp" />
+    <ClCompile Include="DebugLineFX.cpp" />
+    <ClCompile Include="DynamicSectorVolumeFX.cpp" />
+    <ClCompile Include="EntryToolLockFX.cpp" />
+    <ClCompile Include="ExplosionFX.cpp" />
+    <ClCompile Include="FinishingMoveFX.cpp" />
+    <ClCompile Include="FlashLight.cpp" />
+    <ClCompile Include="..\Shared\ForceVolume.cpp" />
+    <ClCompile Include="ForensicObjectFX.cpp" />
+    <ClCompile Include="FrameStatConsoleInfo.cpp" />
+    <ClCompile Include="FullScreenTint.cpp" />
+    <ClCompile Include="GameClientShell.cpp" />
+    <ClCompile Include="GameRuleCtrls.cpp" />
+    <ClCompile Include="GameSettings.cpp" />
+    <ClCompile Include="GameStreamingMgr.cpp" />
+    <ClCompile Include="GlobalClientMgr.cpp" />
+    <ClCompile Include="GlobalsInit.cpp" />
+    <ClCompile Include="HeadBobMgr.cpp" />
+    <ClCompile Include="HitBox.cpp" />
+    <ClCompile Include="..\Shared\HostOptionsMapMgr.cpp" />
+    <ClCompile Include="HUDActivate.cpp" />
+    <ClCompile Include="HUDActivateObject.cpp" />
+    <ClCompile Include="HUDAmmo.cpp" />
+    <ClCompile Include="HUDAmmoStack.cpp" />
+    <ClCompile Include="HUDAnimation.cpp" />
+    <ClCompile Include="HUDArmor.cpp" />
+    <ClCompile Include="HUDBar.cpp" />
+    <ClCompile Include="HUDBuildVersion.cpp" />
+    <ClCompile Include="HUDChatInput.cpp" />
+    <ClCompile Include="HUDControlPoint.cpp" />
+    <ClCompile Include="HUDControlPointBar.cpp" />
+    <ClCompile Include="HUDCrosshair.cpp" />
+    <ClCompile Include="HUDCTFBase.cpp" />
+    <ClCompile Include="HUDCTFFlag.cpp" />
+    <ClCompile Include="HUDDamageDir.cpp" />
+    <ClCompile Include="HUDDebug.cpp" />
+    <ClCompile Include="HUDDebugInput.cpp" />
+    <ClCompile Include="HUDDecision.cpp" />
+    <ClCompile Include="HUDDialogue.cpp" />
+    <ClCompile Include="HUDDistance.cpp" />
+    <ClCompile Include="HUDEndRoundMessage.cpp" />
+    <ClCompile Include="HUDEvidence.cpp" />
+    <ClCompile Include="HUDFlashlight.cpp" />
+    <ClCompile Include="HUDFocus.cpp" />
+    <ClCompile Include="HUDGear.cpp" />
+    <ClCompile Include="HUDGearList.cpp" />
+    <ClCompile Include="HUDGrenade.cpp" />
+    <ClCompile Include="HUDHealth.cpp" />
+    <ClCompile Include="HUDHealth2.cpp" />
+    <ClCompile Include="HUDInstinct.cpp" />
+    <ClCompile Include="HUDInventory.cpp" />
+    <ClCompile Include="HUDInventoryList.cpp" />
+    <ClCompile Include="HUDItem.cpp" />
+    <ClCompile Include="HUDMessage.cpp" />
+    <ClCompile Include="HUDMessageQueue.cpp" />
+    <ClCompile Include="HUDMeter.cpp" />
+    <ClCompile Include="HUDMgr.cpp" />
+    <ClCompile Include="HUDNavMarker.cpp" />
+    <ClCompile Include="HUDNavMarkerMgr.cpp" />
+    <ClCompile Include="HUDOverlay.cpp" />
+    <ClCompile Include="HUDPaused.cpp" />
+    <ClCompile Include="HUDPlayerList.cpp" />
+    <ClCompile Include="HUDRadio.cpp" />
+    <ClCompile Include="HUDRespawn.cpp" />
+    <ClCompile Include="HUDScoreDiff.cpp" />
+    <ClCompile Include="HUDScores.cpp" />
+    <ClCompile Include="HUDSlowMo.cpp" />
+    <ClCompile Include="HUDSonicBreath.cpp" />
+    <ClCompile Include="HUDSpectator.cpp" />
+    <ClCompile Include="HUDSprintBoost.cpp" />
+    <ClCompile Include="HUDSubtitles.cpp" />
+    <ClCompile Include="HUDSwap.cpp" />
+    <ClCompile Include="HUDTeamScores.cpp" />
+    <ClCompile Include="HUDTimer.cpp" />
+    <ClCompile Include="HUDTitleSafeAreaNTSC.cpp" />
+    <ClCompile Include="HUDToolSelect.cpp" />
+    <ClCompile Include="HUDTransmission.cpp" />
+    <ClCompile Include="HUDVote.cpp" />
+    <ClCompile Include="HUDWeapon.cpp" />
+    <ClCompile Include="HUDWeaponBreak.cpp" />
+    <ClCompile Include="HUDWeaponList.cpp" />
+    <ClCompile Include="InterfaceMgr.cpp" />
+    <ClCompile Include="InterfaceResMgr.cpp" />
+    <ClCompile Include="JumpVolumeFX.cpp" />
+    <ClCompile Include="LadderFX.cpp" />
+    <ClCompile Include="LadderMgr.cpp" />
+    <ClCompile Include="LayoutDB.cpp" />
+    <ClCompile Include="LeanMgr.cpp" />
+    <ClCompile Include="LightScaleMgr.cpp" />
+    <ClCompile Include="LoadingScreen.cpp" />
+    <ClCompile Include="LoadingScreenLayout.cpp" />
+    <ClCompile Include="MarkSFX.cpp" />
+    <ClCompile Include="MenuEndRound.cpp" />
+    <ClCompile Include="MenuMgr.cpp" />
+    <ClCompile Include="MenuMission.cpp" />
+    <ClCompile Include="MenuSystem.cpp" />
+    <ClCompile Include="MessageBox.cpp" />
+    <ClCompile Include="MissionMgr.cpp" />
+    <ClCompile Include="ModelDecalMgr.cpp" />
+    <ClCompile Include="NavMarkerFX.cpp" />
+    <ClCompile Include="NodeBlink.cpp" />
+    <ClCompile Include="NodeController.cpp" />
+    <ClCompile Include="objectdetector.cpp" />
+    <ClCompile Include="OrbitalScreenshotMgr.cpp" />
+    <ClCompile Include="PerformanceLog.cpp" />
+    <ClCompile Include="PerformanceLogMgr.cpp" />
+    <ClCompile Include="PerformanceMgr.cpp" />
+    <ClCompile Include="..\..\Engine\sdk\inc\performancemonitorhook.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PerformanceTest.cpp" />
+    <ClCompile Include="PhysicsCollisionSystemFX.cpp" />
+    <ClCompile Include="PhysicsConstraintFX.cpp" />
+    <ClCompile Include="PickupItemFX.cpp" />
+    <ClCompile Include="PlayerBodyMgr.cpp" />
+    <ClCompile Include="PlayerCamera.cpp" />
+    <ClCompile Include="PlayerLureFX.cpp" />
+    <ClCompile Include="PlayerMgr.cpp" />
+    <ClCompile Include="PlayerSoundFX.cpp" />
+    <ClCompile Include="PlayerStats.cpp" />
+    <ClCompile Include="PlayerViewAttachmentMgr.cpp" />
+    <ClCompile Include="PolyGridFX.cpp" />
+    <ClCompile Include="ProfileMgr.cpp" />
+    <ClCompile Include="ProjectileFX.cpp" />
+    <ClCompile Include="RenderTargetFX.cpp" />
+    <ClCompile Include="RenderTargetGroupFx.cpp" />
+    <ClCompile Include="ScatterFX.cpp" />
+    <ClCompile Include="ScmdConsoleDriver_CShell.cpp" />
+    <ClCompile Include="ScoresCtrl.cpp" />
+    <ClCompile Include="ScreenAudio.cpp" />
+    <ClCompile Include="ScreenConfigure.cpp" />
+    <ClCompile Include="ScreenControls.cpp" />
+    <ClCompile Include="ScreenCrosshair.cpp" />
+    <ClCompile Include="ScreenDisplay.cpp" />
+    <ClCompile Include="ScreenEffectFX.cpp" />
+    <ClCompile Include="ScreenFailure.cpp" />
+    <ClCompile Include="ScreenGame.cpp" />
+    <ClCompile Include="ScreenHostDownload.cpp" />
+    <ClCompile Include="ScreenHostVoting.cpp" />
+    <ClCompile Include="ScreenHostWeapons.cpp" />
+    <ClCompile Include="ScreenJoystick.cpp" />
+    <ClCompile Include="ScreenLoad.cpp" />
+    <ClCompile Include="ScreenMain.cpp" />
+    <ClCompile Include="ScreenMgr.cpp" />
+    <ClCompile Include="ScreenMouse.cpp" />
+    <ClCompile Include="ScreenMutePlayer.cpp" />
+    <ClCompile Include="ScreenOptions.cpp" />
+    <ClCompile Include="ScreenPerformance.cpp" />
+    <ClCompile Include="ScreenPerformanceAdvanced.cpp" />
+    <ClCompile Include="ScreenPerformanceCPU.cpp" />
+    <ClCompile Include="ScreenPerformanceGPU.cpp" />
+    <ClCompile Include="ScreenPlayer.cpp" />
+    <ClCompile Include="ScreenPlayerLoadout.cpp" />
+    <ClCompile Include="ScreenPlayerTeam.cpp" />
+    <ClCompile Include="ScreenPostload.cpp" />
+    <ClCompile Include="ScreenPreload.cpp" />
+    <ClCompile Include="ScreenProfile.cpp" />
+    <ClCompile Include="ScreenSave.cpp" />
+    <ClCompile Include="ScreenSingle.cpp" />
+    <ClCompile Include="ScreenTeam.cpp" />
+    <ClCompile Include="ScreenTintMgr.cpp" />
+    <ClCompile Include="ScreenVote.cpp" />
+    <ClCompile Include="ScreenWeapons.cpp" />
+    <ClCompile Include="SearchLightFX.cpp" />
+    <ClCompile Include="SFXMgr.cpp" />
+    <ClCompile Include="ShatterEffect.cpp" />
+    <ClCompile Include="ShatterEffectMgr.cpp" />
+    <ClCompile Include="ShellCasingFX.cpp" />
+    <ClCompile Include="SnowFX.cpp" />
+    <ClCompile Include="SpecialFXList.cpp" />
+    <ClCompile Include="SpecialFXNotifyMessageHandler.cpp" />
+    <ClCompile Include="SpecialMoveFX.cpp" />
+    <ClCompile Include="SpecialMoveMgr.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TargetMgr.cpp" />
+    <ClCompile Include="TeamClientFXSFX.cpp" />
+    <ClCompile Include="TriggerFX.cpp" />
+    <ClCompile Include="TurretFX.cpp" />
+    <ClCompile Include="UserNotificationMgr.cpp" />
+    <ClCompile Include="UserNotifiers.cpp" />
+    <ClCompile Include="VehicleMgr.cpp" />
+    <ClCompile Include="VKDefs.cpp" />
+    <ClCompile Include="VolumetricLightFX.cpp" />
+    <ClCompile Include="WeaponDisplay.cpp" />
+    <ClCompile Include="WeaponFX.cpp" />
+    <ClCompile Include="ScreenHost.cpp" />
+    <ClCompile Include="ScreenHostLevels.cpp" />
+    <ClCompile Include="ScreenHostOptionFile.cpp" />
+    <ClCompile Include="ScreenHostOptions.cpp" />
+    <ClCompile Include="ScreenMulti.cpp" />
+    <ClCompile Include="ServerBrowserCtrl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HUDTeamScores.h" />
+    <ClInclude Include="AccuracyMgr.h" />
+    <ClInclude Include="AccuracyVisualization.h" />
+    <ClInclude Include="ActivateObjectFX.h" />
+    <ClInclude Include="..\Shared\ActivationData.h" />
+    <ClInclude Include="AimMagnetFX.h" />
+    <ClInclude Include="AimMgr.h" />
+    <ClInclude Include="..\Shared\AnimationDescriptorEnums.h" />
+    <ClInclude Include="..\Shared\AnimationDescriptorGroupEnums.h" />
+    <ClInclude Include="..\Shared\AnimationDescriptors.h" />
+    <ClInclude Include="..\Shared\AnimationDescriptorStrings.h" />
+    <ClInclude Include="..\Shared\AnimationProp.h" />
+    <ClInclude Include="..\Shared\AnimationPropEnums.h" />
+    <ClInclude Include="..\Shared\AnimationPropGroupEnums.h" />
+    <ClInclude Include="..\Shared\AnimationPropStrings.h" />
+    <ClInclude Include="..\Shared\Animator.h" />
+    <ClInclude Include="..\Shared\AssertMgr.h" />
+    <ClInclude Include="..\Shared\AttachmentDB.h" />
+    <ClInclude Include="AutoTargetMgr.h" />
+    <ClInclude Include="BaseMenu.h" />
+    <ClInclude Include="BaseScreen.h" />
+    <ClInclude Include="BindMgr.h" />
+    <ClInclude Include="..\Shared\BuildDefines.h" />
+    <ClInclude Include="CameraFX.h" />
+    <ClInclude Include="CameraOffsetMgr.h" />
+    <ClInclude Include="CharacterDisplay.h" />
+    <ClInclude Include="CharacterFX.h" />
+    <ClInclude Include="CheatMgr.h" />
+    <ClInclude Include="client_physics.h" />
+    <ClInclude Include="ClientConnectionMgr.h" />
+    <ClInclude Include="ClientDB.h" />
+    <ClInclude Include="ClientFXInstance.h" />
+    <ClInclude Include="ClientFXMgr.h" />
+    <ClInclude Include="ClientFXSequence.h" />
+    <ClInclude Include="ClientInfoMgr.h" />
+    <ClInclude Include="ClientMeleeCollisionController.h" />
+    <ClInclude Include="ClientNodeTrackerContext.h" />
+    <ClInclude Include="ClientPhysicsCollisionMgr.h" />
+    <ClInclude Include="ClientSaveLoadMgr.h" />
+    <ClInclude Include="..\Shared\ClientServerShared.h" />
+    <ClInclude Include="ClientSoundMgr.h" />
+    <ClInclude Include="ClientSoundNonPointFX.h" />
+    <ClInclude Include="ClientUtilities.h" />
+    <ClInclude Include="ClientVoteMgr.h" />
+    <ClInclude Include="ClientWeapon.h" />
+    <ClInclude Include="ClientWeaponMgr.h" />
+    <ClInclude Include="ClientWeaponUtils.h" />
+    <ClInclude Include="CMoveMgr.h" />
+    <ClInclude Include="..\Shared\CommonUtilities.h" />
+    <ClInclude Include="ConditionalAnimationController.h" />
+    <ClInclude Include="ControlPointSFX.h" />
+    <ClInclude Include="..\Shared\CRC32.h" />
+    <ClInclude Include="Credits.h" />
+    <ClInclude Include="CreditsDB.h" />
+    <ClInclude Include="CTFFlagBaseSFX.h" />
+    <ClInclude Include="CTFFlagSFX.h" />
+    <ClInclude Include="CursorMgr.h" />
+    <ClInclude Include="CursorsDB.h" />
+    <ClInclude Include="CustomCtrls.h" />
+    <ClInclude Include="DamageFXMgr.h" />
+    <ClInclude Include="..\Shared\DamageTypes.h" />
+    <ClInclude Include="..\Shared\DatabaseUtils.h" />
+    <ClInclude Include="..\Shared\DebugLine.h" />
+    <ClInclude Include="DebugLineFX.h" />
+    <ClInclude Include="..\Shared\DebugNew.h" />
+    <ClInclude Include="DynamicSectorVolumeFX.h" />
+    <ClInclude Include="EntryToolLockFX.h" />
+    <ClInclude Include="ExplosionFX.h" />
+    <ClInclude Include="FastList.h" />
+    <ClInclude Include="FinishingMoveFX.h" />
+    <ClInclude Include="FlashLight.h" />
+    <ClInclude Include="..\Shared\ForceVolume.h" />
+    <ClInclude Include="ForensicObjectFX.h" />
+    <ClInclude Include="FrameStatConsoleInfo.h" />
+    <ClInclude Include="FullScreenTint.h" />
+    <ClInclude Include="..\Shared\FXDB.h" />
+    <ClInclude Include="..\Shared\GameButeMgr.h" />
+    <ClInclude Include="GameButes.h" />
+    <ClInclude Include="GameClientShell.h" />
+    <ClInclude Include="..\Shared\GameDatabaseMgr.h" />
+    <ClInclude Include="GameRuleCtrls.h" />
+    <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="GameStreamingMgr.h" />
+    <ClInclude Include="GlobalClientMgr.h" />
+    <ClInclude Include="..\Shared\GlobalMgr.h" />
+    <ClInclude Include="HeadBobMgr.h" />
+    <ClInclude Include="HitBox.h" />
+    <ClInclude Include="..\Shared\HostOptionsMapMgr.h" />
+    <ClInclude Include="HUDActivate.h" />
+    <ClInclude Include="HUDActivateObject.h" />
+    <ClInclude Include="HUDAmmo.h" />
+    <ClInclude Include="HUDAmmoStack.h" />
+    <ClInclude Include="HUDAnimation.h" />
+    <ClInclude Include="HUDArmor.h" />
+    <ClInclude Include="HUDBar.h" />
+    <ClInclude Include="HUDBuildVersion.h" />
+    <ClInclude Include="HUDChatInput.h" />
+    <ClInclude Include="HUDControlPoint.h" />
+    <ClInclude Include="HUDControlPointBar.h" />
+    <ClInclude Include="HUDCrosshair.h" />
+    <ClInclude Include="HUDCTFBase.h" />
+    <ClInclude Include="HUDCTFFlag.h" />
+    <ClInclude Include="HUDDamageDir.h" />
+    <ClInclude Include="HUDDebug.h" />
+    <ClInclude Include="HUDDecision.h" />
+    <ClInclude Include="HUDDialogue.h" />
+    <ClInclude Include="HUDDistance.h" />
+    <ClInclude Include="HUDEndRoundMessage.h" />
+    <ClInclude Include="HUDEnums.h" />
+    <ClInclude Include="HUDEvidence.h" />
+    <ClInclude Include="HUDFlashlight.h" />
+    <ClInclude Include="HUDFocus.h" />
+    <ClInclude Include="HUDGear.h" />
+    <ClInclude Include="HUDGearList.h" />
+    <ClInclude Include="HUDGrenade.h" />
+    <ClInclude Include="HUDHealth.h" />
+    <ClInclude Include="HUDHealth2.h" />
+    <ClInclude Include="HUDInstinct.h" />
+    <ClInclude Include="HUDInventory.h" />
+    <ClInclude Include="HUDInventoryList.h" />
+    <ClInclude Include="HUDItem.h" />
+    <ClInclude Include="HUDMessage.h" />
+    <ClInclude Include="HUDMessageQueue.h" />
+    <ClInclude Include="HUDMeter.h" />
+    <ClInclude Include="HUDMgr.h" />
+    <ClInclude Include="HUDNavMarker.h" />
+    <ClInclude Include="HUDNavMarkerMgr.h" />
+    <ClInclude Include="HUDOverlay.h" />
+    <ClInclude Include="HUDPaused.h" />
+    <ClInclude Include="HUDPlayerList.h" />
+    <ClInclude Include="HUDRadio.h" />
+    <ClInclude Include="HUDRespawn.h" />
+    <ClInclude Include="HUDScoreDiff.h" />
+    <ClInclude Include="HUDScores.h" />
+    <ClInclude Include="HUDSlowMo.h" />
+    <ClInclude Include="HUDSonicBreath.h" />
+    <ClInclude Include="HUDSpectator.h" />
+    <ClInclude Include="HUDSprintBoost.h" />
+    <ClInclude Include="HUDSubtitles.h" />
+    <ClInclude Include="HUDSwap.h" />
+    <ClInclude Include="HUDTimer.h" />
+    <ClInclude Include="HUDTitleSafeAreaNTSC.h" />
+    <ClInclude Include="HUDToolSelect.h" />
+    <ClInclude Include="HUDTransmission.h" />
+    <ClInclude Include="HUDVote.h" />
+    <ClInclude Include="HUDWeapon.h" />
+    <ClInclude Include="HUDWeaponBreak.h" />
+    <ClInclude Include="HUDWeaponList.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\iltbaseclass.h" />
+    <ClInclude Include="InterfaceMgr.h" />
+    <ClInclude Include="InterfaceResMgr.h" />
+    <ClInclude Include="..\Shared\InterfaceSound.h" />
+    <ClInclude Include="..\Libs\ServerDir\IServerDir.h" />
+    <ClInclude Include="JumpVolumeFX.h" />
+    <ClInclude Include="LadderFX.h" />
+    <ClInclude Include="LadderMgr.h" />
+    <ClInclude Include="LayoutDB.h" />
+    <ClInclude Include="LeanMgr.h" />
+    <ClInclude Include="LightScaleMgr.h" />
+    <ClInclude Include="LoadingScreen.h" />
+    <ClInclude Include="LoadingScreenLayout.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\LTEulerAngles.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\ltmodule.h" />
+    <ClInclude Include="..\..\engine\sdk\inc\ltobjref.h" />
+    <ClInclude Include="..\Shared\LTPoly.h" />
+    <ClInclude Include="..\..\Engine\sdk\inc\ltquatbase.h" />
+    <ClInclude Include="MarkSFX.h" />
+    <ClInclude Include="MenuEndRound.h" />
+    <ClInclude Include="MenuEnum.h" />
+    <ClInclude Include="MenuMgr.h" />
+    <ClInclude Include="MenuMission.h" />
+    <ClInclude Include="MenuSystem.h" />
+    <ClInclude Include="MessageBox.h" />
+    <ClInclude Include="..\Shared\MissionDB.h" />
+    <ClInclude Include="MissionMgr.h" />
+    <ClInclude Include="ModelDecalMgr.h" />
+    <ClInclude Include="NavMarkerFX.h" />
+    <ClInclude Include="..\Shared\NavMarkerTypeDB.h" />
+    <ClInclude Include="..\Shared\NetDefs.h" />
+    <ClInclude Include="NodeBlink.h" />
+    <ClInclude Include="NodeController.h" />
+    <ClInclude Include="..\Shared\NodeTracker.h" />
+    <ClInclude Include="..\Shared\NodeTrackerContext.h" />
+    <ClInclude Include="objectdetector.h" />
+    <ClInclude Include="OrbitalScreenshotMgr.h" />
+    <ClInclude Include="..\Shared\ParsedMsg.h" />
+    <ClInclude Include="PerformanceDB.h" />
+    <ClInclude Include="PerformanceLog.h" />
+    <ClInclude Include="PerformanceLogMgr.h" />
+    <ClInclude Include="PerformanceMgr.h" />
+    <ClInclude Include="PerformanceTest.h" />
+    <ClInclude Include="PhysicsCollisionSystemFX.h" />
+    <ClInclude Include="PhysicsConstraintFX.h" />
+    <ClInclude Include="PickupItemFX.h" />
+    <ClInclude Include="plasma.h" />
+    <ClInclude Include="PlayerBodyMgr.h" />
+    <ClInclude Include="PlayerCamera.h" />
+    <ClInclude Include="PlayerLureFX.h" />
+    <ClInclude Include="PlayerMgr.h" />
+    <ClInclude Include="PlayerSoundFX.h" />
+    <ClInclude Include="PlayerStats.h" />
+    <ClInclude Include="PlayerViewAttachmentMgr.h" />
+    <ClInclude Include="PolygridBuffer.h" />
+    <ClInclude Include="PolyGridFX.h" />
+    <ClInclude Include="ProfileMgr.h" />
+    <ClInclude Include="..\Shared\ProfileUtils.h" />
+    <ClInclude Include="ProjectileFX.h" />
+    <ClInclude Include="RenderTargetFX.h" />
+    <ClInclude Include="RenderTargetGroupFx.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="..\Shared\SaveLoadMgr.h" />
+    <ClInclude Include="ScatterFX.h" />
+    <ClInclude Include="..\Shared\ScmdConsole.h" />
+    <ClInclude Include="ScmdConsoleDriver_CShell.h" />
+    <ClInclude Include="ScoresCtrl.h" />
+    <ClInclude Include="ScreenAudio.h" />
+    <ClInclude Include="ScreenCommands.h" />
+    <ClInclude Include="ScreenConfigure.h" />
+    <ClInclude Include="ScreenControls.h" />
+    <ClInclude Include="ScreenCrosshair.h" />
+    <ClInclude Include="ScreenDisplay.h" />
+    <ClInclude Include="..\Shared\ScreenEffectDB.h" />
+    <ClInclude Include="ScreenEffectFX.h" />
+    <ClInclude Include="ScreenEnum.h" />
+    <ClInclude Include="ScreenFailure.h" />
+    <ClInclude Include="ScreenGame.h" />
+    <ClInclude Include="ScreenHost.h" />
+    <ClInclude Include="ScreenHostDownload.h" />
+    <ClInclude Include="ScreenHostLevels.h" />
+    <ClInclude Include="ScreenHostOptionFile.h" />
+    <ClInclude Include="ScreenHostOptions.h" />
+    <ClInclude Include="ScreenHostVoting.h" />
+    <ClInclude Include="ScreenHostWeapons.h" />
+    <ClInclude Include="ScreenJoystick.h" />
+    <ClInclude Include="ScreenLoad.h" />
+    <ClInclude Include="ScreenMain.h" />
+    <ClInclude Include="ScreenMgr.h" />
+    <ClInclude Include="ScreenMouse.h" />
+    <ClInclude Include="ScreenMulti.h" />
+    <ClInclude Include="ScreenMutePlayer.h" />
+    <ClInclude Include="ScreenOptions.h" />
+    <ClInclude Include="ScreenPerformance.h" />
+    <ClInclude Include="ScreenPerformanceAdvanced.h" />
+    <ClInclude Include="ScreenPerformanceCPU.h" />
+    <ClInclude Include="ScreenPerformanceGPU.h" />
+    <ClInclude Include="ScreenPlayer.h" />
+    <ClInclude Include="ScreenPlayerLoadout.h" />
+    <ClInclude Include="ScreenPlayerTeam.h" />
+    <ClInclude Include="ScreenPostload.h" />
+    <ClInclude Include="ScreenPreload.h" />
+    <ClInclude Include="ScreenProfile.h" />
+    <ClInclude Include="ScreenSave.h" />
+    <ClInclude Include="ScreenSingle.h" />
+    <ClInclude Include="ScreenTeam.h" />
+    <ClInclude Include="ScreenTintMgr.h" />
+    <ClInclude Include="ScreenVote.h" />
+    <ClInclude Include="ScreenWeapons.h" />
+    <ClInclude Include="SearchLightFX.h" />
+    <ClInclude Include="ServerBrowserCtrl.h" />
+    <ClInclude Include="SFXMgr.h" />
+    <ClInclude Include="..\Shared\SharedBaseFXStructs.h" />
+    <ClInclude Include="SharedDefs.h" />
+    <ClInclude Include="..\Shared\SharedFXStructs.h" />
+    <ClInclude Include="..\Shared\SharedMission.h" />
+    <ClInclude Include="..\Shared\SharedMovement.h" />
+    <ClInclude Include="..\Shared\SharedScoring.h" />
+    <ClInclude Include="ShatterEffect.h" />
+    <ClInclude Include="ShatterEffectMgr.h" />
+    <ClInclude Include="..\Shared\ShatterTypeDB.h" />
+    <ClInclude Include="ShellCasingFX.h" />
+    <ClInclude Include="..\Shared\SkillsButeMgr.h" />
+    <ClInclude Include="SnowFX.h" />
+    <ClInclude Include="..\Shared\SoundDB.h" />
+    <ClInclude Include="..\Shared\SoundFilterDB.h" />
+    <ClInclude Include="..\Shared\SoundMgr.h" />
+    <ClInclude Include="SpecialFX.h" />
+    <ClInclude Include="SpecialFXList.h" />
+    <ClInclude Include="SpecialFXNotifyMessageHandler.h" />
+    <ClInclude Include="SpecialMoveFX.h" />
+    <ClInclude Include="SpecialMoveMgr.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="StringUtilities.h" />
+    <ClInclude Include="..\Shared\SurfaceDB.h" />
+    <ClInclude Include="..\Shared\SurfaceFunctions.h" />
+    <ClInclude Include="SystemDependant.h" />
+    <ClInclude Include="TargetMgr.h" />
+    <ClInclude Include="..\Shared\TeamClientFXDB.h" />
+    <ClInclude Include="TeamClientFXSFX.h" />
+    <ClInclude Include="..\Shared\TeamMgr.h" />
+    <ClInclude Include="..\Shared\TemplateList.h" />
+    <ClInclude Include="TriggerFX.h" />
+    <ClInclude Include="..\Shared\TriggerTypeDB.h" />
+    <ClInclude Include="TurretFX.h" />
+    <ClInclude Include="UserNotificationMgr.h" />
+    <ClInclude Include="VarTrack.h" />
+    <ClInclude Include="VehicleMgr.h" />
+    <ClInclude Include="VehicleWeapon.h" />
+    <ClInclude Include="..\Shared\VersionMgr.h" />
+    <ClInclude Include="VKDefs.h" />
+    <ClInclude Include="VolumeBrushFX.h" />
+    <ClInclude Include="VolumetricLightFX.h" />
+    <ClInclude Include="..\Shared\WaveFn.h" />
+    <ClInclude Include="..\Shared\WeaponDB.h" />
+    <ClInclude Include="WeaponDisplay.h" />
+    <ClInclude Include="WeaponFX.h" />
+    <ClInclude Include="..\Shared\WinUtil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Game_ClientShell.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\stdlith\Shared_StdLith.vcxproj">
+      <Project>{e37ef250-69d4-4878-9a98-ebd70407f954}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Libs\LTGUIMgr\Game_GUIMgr.vcxproj">
+      <Project>{7b393eeb-293f-4e86-af4d-8048832eed1c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Game_Shared_Client.vcxproj">
+      <Project>{8bae3b36-c183-40de-bc9c-d9c5e9c7c487}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
