@@ -1,0 +1,47 @@
+// ----------------------------------------------------------------------- //
+//
+// MODULE  : ltbuildversion.rc2
+//
+// PURPOSE : Contains the version information for all Monolith products
+//
+// CREATED : 11/03/05
+//
+// (c) 2005 Monolith Productions, Inc.  All Rights Reserved
+//
+// ----------------------------------------------------------------------- //
+
+#include "ltbuildversion.h"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION LT_PRODUCT_MAJOR,LT_PRODUCT_MINOR,LT_PRODUCT_BUILD,LT_PRODUCT_HOTFIX
+ PRODUCTVERSION LT_PRODUCT_MAJOR,LT_PRODUCT_MINOR,LT_PRODUCT_BUILD,LT_PRODUCT_HOTFIX
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", LT_VERSION_COMPANYNAME
+            VALUE "FileDescription", LT_VERSION_DESCRIPTION
+            VALUE "FileVersion", LT_VERSION_PRODUCT_STRING
+            VALUE "LegalCopyright", LT_VERSION_COPYRIGHT
+            VALUE "ProductName", LT_VERSION_DESCRIPTION
+            VALUE "ProductVersion", LT_VERSION_PRODUCT_STRING
+			VALUE LT_VERSION_RESOURCE_BUILD_VERSION, LT_VERSION_INTERNAL_STRING
+			VALUE LT_VERSION_RESOURCE_BUILD_STRING, LT_VERSION_BUILD_STRING
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+

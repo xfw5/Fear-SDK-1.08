@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{91927914-e9b6-4c73-81c2-3caaebbbd7b9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7585f03b-106c-477e-8e71-c8f0a8252119}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stringholder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="struct_bank.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dynarray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="goodlinklist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="multilinklist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="object_bank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdlith.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdlithdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringholder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="struct_bank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

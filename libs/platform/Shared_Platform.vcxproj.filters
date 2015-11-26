@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Win32">
+      <UniqueIdentifier>{abaf6440-d189-4d28-beca-8b1b32246b3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Linux">
+      <UniqueIdentifier>{9908e095-57d5-4d7f-96ab-dfa69da6ad2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared">
+      <UniqueIdentifier>{cd2f80e3-ad49-4f97-b792-8f2b6be91e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sys\win32\win32_ltcriticalsection.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sys\win32\win32_ltfilebase.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sys\win32\win32_ltfilebuffer.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sys\win32\win32_ltfileread.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sys\win32\win32_ltfilewrite.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sys\win32\win32_ltthread.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sys\win32\win32_ltthreadevent.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="iltcriticalsection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iltfileread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iltfilewrite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iltthread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iltthreadevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltautocriticalsection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltcriticalsection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltfileoperations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltinterlockedoperations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltlibraryloader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltprofileutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltsocketutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltthread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltthreadevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ltthreadutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lttimeutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sys\win32\win32_ltfilebuffer.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\win32\win32_ltfileoperations.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\win32\win32_ltfileread.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\win32\win32_ltlibraryloader.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\win32\win32_ltprofileutils.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\win32\win32_ltsocketutils.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\win32\win32_ltthreadutils.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\win32\win32_lttimeutils.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_ltcriticalsection.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_ltfileoperations.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_ltinterlockedoperations.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_ltlibraryloader.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_ltprofileutils.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_ltsocketutils.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_ltthread.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_ltthreadutils.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\linux\linux_lttimeutils.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="ltfileoperations.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sys\win32\win32_ltinterlockedoperations.inl">
+      <Filter>Source Files\Win32</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="sys\linux\linux_ltfilebase.h">
+      <Filter>Source Files\Linux</Filter>
+    </CustomBuild>
+    <CustomBuild Include="sys\linux\linux_ltfileread.h">
+      <Filter>Source Files\Linux</Filter>
+    </CustomBuild>
+    <CustomBuild Include="sys\linux\linux_ltfilewrite.h">
+      <Filter>Source Files\Linux</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
